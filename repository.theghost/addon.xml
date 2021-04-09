@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="repository.theghost" name="[COLOR orange]The Ghost[/COLOR] Repository" version="1.0.1" provider-name="The Ghost">
+<addon id="repository.theghost" name="[COLOR orange]The Ghost[/COLOR] Repository" version="1.0.0" provider-name="The Ghost">
     <extension point="xbmc.addon.repository" name="Repository The Ghost">
         <dir>
             <info compressed="false">https://raw.githubusercontent.com/freaktabnl/repository.theghost/master/zips/addons.xml</info>
