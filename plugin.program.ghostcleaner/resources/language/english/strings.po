@@ -1,0 +1,394 @@
+# Kodi Media Center language file
+# Addon Name: Ghost Cleaner
+# Addon id: plugin.program.ghostcleaner
+# Addon Provider: The Ghost
+msgid ""
+msgstr ""
+"Project-Id-Version: Kodi add-ons\n"
+"Report-Msgid-Bugs-To: https://forum.kodi.tv/\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Kodi Translation Team\n"
+"Language-Team: Rock\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en_GB\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+msgctxt "#30001"
+msgid "[COLOR orange]Controleert addons zonder repos[/COLOR]"
+msgstr ""
+
+msgctxt "#30002"
+msgid "[COLOR orange]Textures database[/COLOR]"
+msgstr ""
+
+msgctxt "#30003"
+msgid "[COLOR orange]Textures DB opschonen[/COLOR]"
+msgstr ""
+
+msgctxt "#30004"
+msgid "[B][COLOR orange]Alles opschonen[/COLOR][/B]"
+msgstr ""
+
+msgctxt "#30005"
+msgid "[COLOR orange]Databases[/COLOR]"
+msgstr ""
+
+msgctxt "#30007"
+msgid "[COLOR orange]Controleert onbruikbare bronnen[/COLOR]"
+msgstr ""
+
+msgctxt "#30010"
+msgid "[COLOR orange]Ghost Cleaner - Bevestig het opschonen van:[/COLOR]"
+msgstr ""
+
+msgctxt "#30011"
+msgid "[COLOR orange]Controleert tijdelijke bestanden[/COLOR]"
+msgstr ""
+
+msgctxt "#30012"
+msgid "[COLOR orange]Controleert paden...[/COLOR]"
+msgstr ""
+
+msgctxt "#30013"
+msgid "[COLOR orange]Opschonen: [/COLOR]"
+msgstr ""
+
+msgctxt "#30014"
+msgid "[COLOR orange]Verwijderd: [/COLOR]"
+msgstr ""
+
+msgctxt "#30015"
+msgid "[COLOR orange]Items in deze map: [/COLOR]"
+msgstr ""
+
+msgctxt "#30016"
+msgid "[COLOR orange]Controleert databases[/COLOR]"
+msgstr ""
+
+msgctxt "#30017"
+msgid "[COLOR orange]Compacting: [/COLOR]"
+msgstr ""
+
+msgctxt "#30018"
+msgid "[COLOR orange]Compacted: [/COLOR]"
+msgstr ""
+
+msgctxt "#30019"
+msgid "[COLOR orange]Controleert repos[/COLOR]"
+msgstr ""
+
+msgctxt "#30020"
+msgid "[COLOR orange]Opschonen [/COLOR]"
+msgstr ""
+
+msgctxt "#30021"
+msgid "[COLOR orange]Kies actie:[/COLOR]"
+msgstr ""
+
+msgctxt "#30022"
+msgid "[B][COLOR orange]Instellingen[/COLOR][/B]"
+msgstr ""
+
+msgctxt "#30023"
+msgid "[COLOR orange]Compact alle databases[/COLOR]"
+msgstr ""
+
+msgctxt "#30024"
+msgid "[COLOR orange]Controleer ongebruikte repos[/COLOR]"
+msgstr ""
+
+msgctxt "#30025"
+msgid "[COLOR orange]Controleren: [/COLOR]"
+msgstr ""
+
+msgctxt "#30026"
+msgid "[COLOR orange]Gecontrolleerd: [/COLOR]"
+msgstr ""
+
+msgctxt "#30027"
+msgid "[COLOR orange]Alles opschonen + Compact alle databases[/COLOR]"
+msgstr ""
+
+msgctxt "#30028"
+msgid "[COLOR orange]Bevestig actie:[/COLOR]"
+msgstr ""
+
+msgctxt "#30030"
+msgid "[COLOR red]Opschonen afgebroken.[/COLOR]"
+msgstr ""
+
+msgctxt "#30031"
+msgid "[COLOR red]Opschonen gereed.[/COLOR]"
+msgstr ""
+
+msgctxt "#30041"
+msgid "[B][COLOR orange]MENU[/COLOR][/B]"
+msgstr ""
+
+msgctxt "#30042"
+msgid "[B][COLOR orange]AUTOMATISCH OPSCHONEN[/COLOR][/B]"
+msgstr ""
+
+msgctxt "#30043"
+msgid "[B][COLOR orange]DEBUG[/COLOR][/B]"
+msgstr ""
+
+msgctxt "#30072"
+msgid "[COLOR orange]Alleen thumbs verwijderen welke niet in database zitten[/COLOR]"
+msgstr ""
+
+msgctxt "#30081"
+msgid "[COLOR orange]Debug logging - [COLOR red]naar Kodi log[/COLOR]"
+msgstr ""
+
+msgctxt "#30083"
+msgid "[COLOR orange]Schakel bevestigingen op het scherm uit[/COLOR]"
+msgstr ""
+
+msgctxt "#30090"
+msgid "Add-on Data [COLOR orange](Addon data opschonen) [/COLOR]"
+msgstr ""
+
+msgctxt "#30091"
+msgid "[COLOR orange]Automatisch opschonen[/COLOR]"
+msgstr ""
+
+msgctxt "#30092"
+msgid "[COLOR white]Wat wilt u automatisch opgeschoond hebben:[/COLOR]"
+msgstr ""
+
+msgctxt "#30093"
+msgid "[COLOR orange]Cache[/COLOR]"
+msgstr ""
+
+msgctxt "#30094"
+msgid "[COLOR orange]Packages[/COLOR]"
+msgstr ""
+
+msgctxt "#30095"
+msgid "[COLOR orange]Thumbnails[/COLOR]"
+msgstr ""
+
+msgctxt "#30096"
+msgid "[COLOR orange]Addons[/COLOR]"
+msgstr ""
+
+msgctxt "#30097"
+msgid "[COLOR orange]Database Compact[/COLOR]"
+msgstr ""
+
+msgctxt "#30098"
+msgid "[COLOR orange]Vertraging bij opstarten (min)[/COLOR]"
+msgstr ""
+
+msgctxt "#30099"
+msgid "[COLOR orange]Opschonen textures DB[/COLOR]"
+msgstr ""
+
+msgctxt "#30100"
+msgid "[B][COLOR orange]Addon data[/COLOR][/B]"
+msgstr ""
+
+msgctxt "#30101"
+msgid "[COLOR orange]ATV screensaver bestanden[/COLOR]"
+msgstr ""
+
+msgctxt "#30110"
+msgid "[COLOR orange]Database [/COLOR]"
+msgstr ""
+
+msgctxt "#30111"
+msgid "[COLOR orange] gecomprimeerd:[/COLOR]"
+msgstr ""
+
+msgctxt "#30112"
+msgid "[COLOR red]Mb[/COLOR]"
+msgstr ""
+
+msgctxt "#30113"
+msgid "[COLOR orange] opgeschoond:[/COLOR]"
+msgstr ""
+
+msgctxt "#30114"
+msgid "[COLOR orange]Scant Textures database...[/COLOR]"
+msgstr ""
+
+msgctxt "#30115"
+msgid "[COLOR orange]Controleert...[/COLOR]"
+msgstr ""
+
+msgctxt "#30116"
+msgid "[COLOR orange]Controleert record ID: [/COLOR]"
+msgstr ""
+
+msgctxt "#30117"
+msgid "[COLOR orange]Controleert ongebruikte data mappen[/COLOR]"
+msgstr ""
+
+msgctxt "#30118"
+msgid "[COLOR orange]Paden welke gecomprimeerd dienen te worden...[/COLOR]"
+msgstr ""
+
+msgctxt "#30120"
+msgid "[COLOR orange]LEESFOUT[/COLOR]"
+msgstr ""
+
+msgctxt "#30121"
+msgid "[COLOR orange]BEVAT GEEN ADDONS[/COLOR]"
+msgstr ""
+
+msgctxt "#30122"
+msgid "[COLOR orange]ZIT NIET IN EEN REPO[/COLOR]"
+msgstr ""
+
+msgctxt "#30123"
+msgid "[COLOR orange]KAN NIET GEVONDEN WORDEN[/COLOR]"
+msgstr ""
+
+
+msgctxt "#30130"
+msgid "[COLOR orange]Opgeschoond:[/COLOR]"
+msgstr ""
+
+msgctxt "#30131"
+msgid "[COLOR orange]Gecomprimeerd:[/COLOR]"
+msgstr ""
+
+msgctxt "#30132"
+msgid "[COLOR orange]Onderstaande repos bevatten geen addons:[/COLOR]"
+msgstr ""
+
+msgctxt "#30133"
+msgid "[COLOR orange]Opschoon verslag:[/COLOR]"
+msgstr ""
+
+msgctxt "#30134"
+msgid "[COLOR orange]Onderstaande addons hebben geen repo:[/COLOR]"
+msgstr ""
+
+msgctxt "#30135"
+msgid "[COLOR orange]Textures database opschonen:[/COLOR]"
+msgstr ""
+
+msgctxt "#30136"
+msgid "[COLOR orange]Verwijderd[/COLOR]"
+msgstr ""
+
+msgctxt "#30137"
+msgid "[COLOR orange]stale records from Textures13.db database[/COLOR]"
+msgstr ""
+
+msgctxt "#30138"
+msgid "[COLOR orange]Verwijderde ongebruikte addon data mappen:[/COLOR]"
+msgstr ""
+
+msgctxt "#30139"
+msgid "[COLOR orange]Pad naar gecomprimeerde instellingen:[/COLOR]"
+msgstr ""
+
+msgctxt "#30140"
+msgid "[COLOR orange]Start elke[/COLOR]"
+msgstr ""
+
+msgctxt "#30141"
+msgid "[COLOR orange]dag[/COLOR]"
+msgstr ""
+
+msgctxt "#30142"
+msgid "[COLOR orange]week[/COLOR]"
+msgstr ""
+
+msgctxt "#30143"
+msgid "[COLOR orange]maand[/COLOR]"
+msgstr ""
+
+msgctxt "#30144"
+msgid "[COLOR orange]kwartaal[/COLOR]"
+msgstr ""
+
+msgctxt "#30145"
+msgid "[COLOR orange]Tijdens opstarten Kodi[/COLOR]"
+msgstr ""
+
+msgctxt "#30150"
+msgid "[COLOR orange]Geen bestanden gevonden om te verwijderen.[/COLOR]"
+msgstr ""
+
+msgctxt "#30151"
+msgid "[COLOR orange]Geen database gecomprimeerd.[/COLOR]"
+msgstr ""
+
+msgctxt "#30152"
+msgid "[COLOR orange]Geen records verwijderd.[/COLOR]"
+msgstr ""
+
+msgctxt "#30153"
+msgid "[COLOR orange]Geen paden gecomprimeerd.[/COLOR]"
+msgstr ""
+
+msgctxt "#30160"
+msgid "[B][COLOR orange]Cache[/COLOR][/B]"
+msgstr ""
+
+msgctxt "#30161"
+msgid "[B][COLOR orange]Packages[/COLOR][/B]"
+msgstr ""
+
+msgctxt "#30162"
+msgid "[B][COLOR orange]Thumbnails[/COLOR][/B]"
+msgstr ""
+
+msgctxt "#30163"
+msgid "[COLOR orange]Addons opschonen[/COLOR]"
+msgstr ""
+
+msgctxt "#30170"
+msgid "[COLOR orange] /Alles[/COLOR]"
+msgstr ""
+
+msgctxt "#30171"
+msgid "[COLOR orange] /Niet in DB[/COLOR]"
+msgstr ""
+
+msgctxt "#30172"
+msgid "[COLOR orange] /Niet in DB (Snel)[/COLOR]"
+msgstr ""
+
+msgctxt "#30180"
+msgid "[COLOR orange]Auto Clean venster[/COLOR]"
+msgstr ""
+
+msgctxt "#30181"
+msgid "[COLOR orange]Voortgang en mededeling[/COLOR]"
+msgstr ""
+
+msgctxt "#30182"
+msgid "[COLOR orange]Alleen voortgang[/COLOR]"
+msgstr ""
+
+msgctxt "#30183"
+msgid "[COLOR orange]Alleen mededeling[/COLOR]"
+msgstr ""
+
+msgctxt "#30184"
+msgid "[COLOR orange]Niets[/COLOR]"
+msgstr ""
+
+msgctxt "#30185"
+msgid "[B][COLOR orange]Addons en repos updaten[/COLOR][/B]"
+msgstr ""
+
+msgctxt "#30186"
+msgid "[COLOR orange]GHOST CLEANER[/COLOR]"
+msgstr ""
+
+msgctxt "#30187"
+msgid "[COLOR orange]Update alle addons en repo's?[/COLOR]"
+msgstr ""
+
+msgctxt "#30188"
+msgid "[B][COLOR orange]Huidige Cleaner versie [COLOR white]1.0.0-Kodi 19 Matrix[/COLOR][/B]"
+msgstr ""
