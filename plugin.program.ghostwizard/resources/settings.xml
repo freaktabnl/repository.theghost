@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<settings>
+	<category label="Build opties">
+		<setting type="lsep" label="Huidige build:"/>
+		<setting id="buildname" type="text" label="Huidige build: " enable="false" default="Geen build op uw systeem"/>
+		<setting id="buildversion" type="text" label="Versie: " enable="false" default="0"/>
+		<setting id="firstrun" type="bool" label="Eerste run" visible="false"/>
+		<setting id="firstrunNotify" type="bool" label="Eerste run" visible="false"/>
+		<setting id="notifyversion" type="text" label="Huidige versie: " enable="false" default="0"/>
+	</category>
+	<category label="Bewaren">
+	<setting type="lsep" label="Selecteer wat u wilt bewaren tijdens nieuwe build installatie:"/>
+	<setting id="savefavs" type="bool" label="Bewaar mijn favorieten" default="false"/>
+    <setting id="savedebrid"  type="bool" label="Bewaar mijn Real Debrid info (Resolveurl)" default="false"/>
+    <setting id="savesources" type="bool" label="Bewaar mijn bronnen binnen bestandsbeheer" default="false"/>
+    <setting id="saveadvanced" type="bool" label="Bewaar mijn Advanced Settings bestand" default="false"/>
+    </category>
+</settings>

@@ -1,0 +1,30 @@
+{
+	"builds": [
+		{
+			"name": "KODI 19 CLEAN (32MB)",
+			"version": "1.3",
+			"url": "https://ghostproject.nl/kodi19clean.zip",
+			"icon": "https://ghostproject.nl/kodiclean.png",
+			"fanart": "http://",
+			"description": "CLEAN KODI 19 BUILD WITHOUT ANY ILLEGAL ADDONS. INSIDE KODI ALL SETTINGS ARE ALREADY OPTIMISED AND WE HAVE INSTALLED > SUBTITLE ADDON / CLEANER ADDON / WIZARD ADDON AND MANY MORE IMPORTANT DEPENDENCY AND SERVICE ADDONS"
+		},
+		
+		{
+			"name": "KODI 19 AMBER (227MB)",
+			"version": "1.3",
+			"url": "https://ghostproject.nl/kodi19amber.zip",
+			"icon": "https://ghostproject.nl/amber19.png",
+			"fanart": "http://",
+			"description": "KODI 19 BUILD WITH MOST POPULAIR ADDONS IN AMBER SKIN. INSIDE KODI ALL SETTINGS ARE ALREADY OPTIMISED AND WE HAVE INSTALLED > SUBTITLE ADDON / CLEANER ADDON / WIZARD ADDON. JUST ACTIVATE YOUR RD/PREM/AD ACCOUNT"
+		},
+
+		{
+			"name": "KODI 19 WASTELAND (100MB)",
+			"version": "1.2",
+			"url": "https://ghostproject.nl/kodi19wasteland.zip",
+			"icon": "https://ghostproject.nl/wasteland.png",
+			"fanart": "http://",
+			"description": "KODI 19 BUILD ON AEON NOX SKIN. INSIDE KODI ALL SETTINGS ARE ALREADY OPTIMISED AND WE HAVE INSTALLED > SUBTITLE ADDON / CLEANER ADDON / WIZARD ADDON.  JUST ACTIVATE YOUR RD/PREM/AD ACCOUNT"
+		}
+	]
+}

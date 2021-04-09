@@ -1,0 +1,99 @@
+# Kodi Media Center language file
+# Addon Name: The Ghost Wizard
+# Addon id: plugin.program.ghostwizard
+# Addon Provider: The Ghost
+msgid ""
+msgstr ""
+"Project-Id-Version: Kodi Addons\n"
+"Report-Msgid-Bugs-To: alanwww1@kodi.org\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Kodi Translation Team\n"
+"Language-Team: English (http://www.transifex.com/projects/p/xbmc-addons/language/en/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+
+#####----- MainMenu items -----#####
+#####----- 30000->30020 -------#####
+msgctxt "#30000"
+msgid "Menu"
+msgstr ""
+
+msgctxt "#30001"
+msgid "Installeer een build."
+msgstr ""
+
+msgctxt "#30002"
+msgid "Onderhoud"
+msgstr ""
+
+msgctxt "#30003"
+msgid "Alle data verwijderen behalve welke u bewaard wilde hebben"
+msgstr ""
+
+msgctxt "#30004"
+msgid "Installeer build"
+msgstr ""
+
+msgctxt "#30005"
+msgid "Packages map legen om ruimte vrij te maken"
+msgstr ""
+
+msgctxt "#30006"
+msgid "Schone start"
+msgstr ""
+
+msgctxt "#30007"
+msgid "Alle data verwijderen. LET OP: Dit kunt u niet terug draaien"
+msgstr ""
+
+msgctxt "#30008"
+msgid "Verwijder de Thumbnails map en het Textures13 database bestand. Deze alleen verwijderen om ruimte te krijgen. Start Kodi opnieuw op om weer thumbnails te genereren."
+msgstr ""
+
+msgctxt "#30009"
+msgid "Lijst met advies instellingen gebasseerd op uw systeems RAM geheugen."
+msgstr ""
+
+#####----- GuiMenu items -----#####
+#####----- 30020->30040 ------#####
+
+msgctxt "#30020"
+msgid "Basic Dialog Text"
+msgstr ""
+
+msgctxt ""
+msgid ""
+msgstr ""
+
+
+
+######-----Settings-----#####
+
+msgctxt "#30100"
+msgid "Logging"
+msgstr ""
+
+msgctxt "#30101"
+msgid "Addon login instellingen"
+msgstr ""
+
+msgctxt "#30102"
+msgid "Debug"
+msgstr ""
+
+msgctxt "#30103"
+msgid "Acties"
+msgstr ""
+
+msgctxt "#30104"
+msgid "Window informatie"
+msgstr ""
+
+msgctxt "#30105"
+msgid "Algemeen"
+msgstr ""
