@@ -121,4 +121,33 @@
         </assets>
     </extension>
 </addon>
+
+<addon id="service.ghostcleansubs" name="[COLOR orange]Ghost[/COLOR] CleanSubs" provider-name="The Ghost" version="1.0.0">
+  <requires>
+    <import addon="xbmc.python" version="3.0.0" />
+    <import addon="script.module.myconnpy" version="1.1.7" />
+    <import addon="script.module.pil" version="1.1.7" />
+  </requires>
+  <extension library="default.py" point="xbmc.service" start="startup">
+  </extension>
+    <extension library="standalone.py" point="xbmc.python.script">
+        <provides>executable</provides>
+    </extension>
+  <extension point="xbmc.addon.metadata">
+    <platform>all</platform>
+    <summary lang="en_GB">Service addon om ondertitels op te schonen.</summary>
+    <description lang="en_GB">Deze service addon verwijderd alle onnodige tekst binnen de ondertitels zoals bijvoorbeeld reclames.</description>
+	<disclaimer lang="en_GB">Deze addon bevat geen illegale content en maakt op geen enkele wijze deel uit van Kodi zelf.</disclaimer>
+	<license>GPL-2.0-or-later</license>
+    <assets>
+        <icon>icon.png</icon>
+        <fanart>fanart.jpg</fanart>
+        <screenshot>resources/screenshot-01.jpg</screenshot>
+        <screenshot>resources/screenshot-02.jpg</screenshot>
+        <screenshot>resources/screenshot-03.jpg</screenshot>
+        <banner>resources/banner.jpg</banner>
+        <logo>resources/logo.png</logo>
+    </assets>
+  </extension>
+</addon>
 </addons>
