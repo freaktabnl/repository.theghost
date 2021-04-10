@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<settings>
+    <category label="30000">
+        <setting label="30001" type="bool"   id="on" default="true"/>
+        <setting label="30002" type="bool"   id="info" default="true"/>
+        <setting label="30003" type="bool"   id="logo" default="true"/>
+        <setting label="30004" type="enum"   id="method"  lvalues="30011|30012|30013" default="0"/>
+        <setting label="30008" type="slider" id="herlines" option="int" range="1,1,20" enable="lt(-1,2)" default="2" />
+        <setting label="30005" type="folder" id="folder" source="auto"/>
+        <setting label="30007" type="bool"   id="removecc" default="false"/>
+        <setting label="30101" type="bool"   id="removetags" default="false"/>
+        <setting label="30102" type="bool"   id="blackbar" default="false"/>
+        <setting label="30103" type="text"   id="blackbar_textcolor" default="#FFFF00" enable="eq(-1,true)"  subsetting="true"/>
+        <setting label="30009" type="bool"   id="custdef" default="true"/>
+        <setting label="30100" type="bool"   id="delorigsub" default="false"/>
+    </category>
+</settings>
