@@ -79,7 +79,7 @@ def GetSettings(par1):
     global saaTextColor
 
     errors = False
-    __addon__ = xbmcaddon.Addon(id='service.cleansubs')
+    __addon__ = xbmcaddon.Addon(id='service.ghostcleansubs')
 
     booOn = bool(strtobool(str(__addon__.getSetting('on').title())))
     booInfo = bool(strtobool(str(__addon__.getSetting('info').title())))
@@ -921,7 +921,7 @@ def PlayingInfo():
     global __addon__
     global booOn
 
-    __addon__ = xbmcaddon.Addon(id='service.cleansubs')
+    __addon__ = xbmcaddon.Addon(id='service.ghostcleansubs')
     booOn = bool(strtobool(str(__addon__.getSetting('on').title())))
 
     stream = xbmc.getCondVisibility('Player.IsInternetStream')
@@ -1347,7 +1347,7 @@ def GetLocalDomain():
 # ============================================================
 
 
-__addon__ = xbmcaddon.Addon(id='service.cleansubs')
+__addon__ = xbmcaddon.Addon(id='service.ghostcleansubs')
 __addonname__ = __addon__.getAddonInfo('name')
 __addonwd__ = xbmc.translatePath(__addon__.getAddonInfo('path'))
 __addondir__ = xbmc.translatePath(__addon__.getAddonInfo('profile'))

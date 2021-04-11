@@ -1,7 +1,7 @@
 # Kodi Media Center language file
-# Addon Name: CleanSubs
-# Addon id: service.cleansubs
-# Addon Provider: Dalibor Lanik
+# Addon Name: Ghost CleanSubs
+# Addon id: service.ghostcleansubs
+# Addon Provider: Dalibor Lanik, The Ghost
 msgid ""
 msgstr ""
 "Project-Id-Version: Kodi Addons\n"

@@ -145,7 +145,7 @@ def scanPaths(path, intOrder, intPaths, intLevels):
 # ============================================================
 
 
-__addon__ = xbmcaddon.Addon(id='service.cleansubs')
+__addon__ = xbmcaddon.Addon(id='service.ghostcleansubs')
 __addonwd__ = xbmc.translatePath(__addon__.getAddonInfo('path'))
 __addondir__ = xbmc.translatePath(__addon__.getAddonInfo('profile'))
 __addonname__ = __addon__.getAddonInfo('name')
