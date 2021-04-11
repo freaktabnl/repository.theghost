@@ -42,7 +42,7 @@
                     <font>font12</font>
                     <textcolor>ffffffff</textcolor>
                     <shadowcolor>00000000</shadowcolor>
-                    <label>$ADDON[script.service.sponsorblock 32008]</label>
+                    <label>$ADDON[script.service.ghostsponsorblock 32008]</label>
                 </control>
 
                 <!-- Buttons -->
@@ -61,7 +61,7 @@
                         <align>center</align>
                         <focusedcolor>eeffffff</focusedcolor>
                         <font>font20_title</font>
-                        <label>$ADDON[script.service.sponsorblock 32009]</label>
+                        <label>$ADDON[script.service.ghostsponsorblock 32009]</label>
                         <selectedcolor>ddffffff</selectedcolor>
                         <shadowcolor>22000000</shadowcolor>
                         <textcolor>ddffffff</textcolor>
@@ -73,7 +73,7 @@
                         <align>center</align>
                         <focusedcolor>eeffffff</focusedcolor>
                         <font>font20_title</font>
-                        <label>$ADDON[script.service.sponsorblock 32010]</label>
+                        <label>$ADDON[script.service.ghostsponsorblock 32010]</label>
                         <selectedcolor>ddffffff</selectedcolor>
                         <shadowcolor>22000000</shadowcolor>
                         <textcolor>ddffdddd</textcolor>

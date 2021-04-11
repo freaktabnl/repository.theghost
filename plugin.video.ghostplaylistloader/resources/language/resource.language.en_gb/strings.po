@@ -1,0 +1,201 @@
+# Kodi Media Center language file
+# Addon Name: Ghost Playlist Loader
+# Addon id: plugin.video.ghostplaylistloader
+
+msgid ""
+msgstr ""
+
+"Last-Translator: Publish3r\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgctxt "#30000"
+msgid "Instellingen"
+msgstr ""
+
+msgctxt "#30001"
+msgid "Nieuwe lijst toevoegen"
+msgstr ""
+
+msgctxt "#30002"
+msgid "Selecteer playlist bron"
+msgstr ""
+
+msgctxt "#30003"
+msgid "Favorieten"
+msgstr ""
+
+msgctxt "#30004"
+msgid "Naam voor lijst"
+msgstr ""
+
+msgctxt "#30005"
+msgid "URL avn lijst"
+msgstr ""
+
+msgctxt "#30006"
+msgid "Kies lijst"
+msgstr ""
+
+msgctxt "#30007"
+msgid "is dezelfde url"
+msgstr ""
+
+msgctxt "#30008"
+msgid "Verwijder van Ghost Playlist Loader"
+msgstr ""
+
+msgctxt "#30009"
+msgid "Voeg toe aan Ghost Playlist Loader favorieten"
+msgstr ""
+
+msgctxt "#30010"
+msgid "Verwijder uit Ghost Playlist Loader favorieten"
+msgstr ""
+
+msgctxt "#30011"
+msgid "staat reeds in uw favorieten"
+msgstr ""
+
+msgctxt "#30012"
+msgid "toevoegen aan favorieten"
+msgstr ""
+
+msgctxt "#30013"
+msgid "Nieuw kanaal toevoegen"
+msgstr ""
+
+msgctxt "#30014"
+msgid "Naam van kanaal"
+msgstr ""
+
+msgctxt "#30015"
+msgid "URL van kanaal"
+msgstr ""
+
+msgctxt "#30016"
+msgid "Niet lokale lijst (URL)"
+msgstr ""
+
+msgctxt "#30017"
+msgid "Lokale lijst (Bestand)"
+msgstr ""
+
+msgctxt "#30018"
+msgid "Bron voor kanaal logo's (indien bekend)"
+msgstr ""
+
+msgctxt "#30019"
+msgid "URL voor kanaal logo's (indien bekend)"
+msgstr ""
+
+msgctxt "#30020"
+msgid "Map voor kanaal logo's"
+msgstr ""
+
+msgctxt "#30021"
+msgid "Geen"
+msgstr ""
+
+msgctxt "#30022"
+msgid "Kies logo voor lijst"
+msgstr ""
+
+msgctxt "#30023"
+msgid "Kies logo voor kanaal"
+msgstr ""
+
+msgctxt "#30024"
+msgid "Logo middels URL"
+msgstr ""
+
+msgctxt "#30025"
+msgid "Logo vanuit bestand"
+msgstr ""
+
+msgctxt "#30026"
+msgid "Hernoem"
+msgstr ""
+
+msgctxt "#30027"
+msgid "Verander bron"
+msgstr ""
+
+msgctxt "#30028"
+msgid "Verander logo logo"
+msgstr ""
+
+msgctxt "#30029"
+msgid "Verander kanaal logo's bron"
+msgstr ""
+
+msgctxt "#30030"
+msgid "Naar boven"
+msgstr ""
+
+msgctxt "#30031"
+msgid "Naar onderen"
+msgstr ""
+
+msgctxt "#30032"
+msgid "Verplaatsen naar"
+msgstr ""
+
+msgctxt "#30033"
+msgid "Selecteer een nieuwe lokatie"
+msgstr ""
+
+msgctxt "#30034"
+msgid "Aantal minuten om lijst op te halen"
+msgstr ""
+
+msgctxt "#30035"
+msgid "Verander tijd om lijst op te halen"
+msgstr ""
+
+msgctxt "#30036"
+msgid "Groepen laten zien in lijst"
+msgstr ""
+
+msgctxt "#30037"
+msgid "Ja"
+msgstr ""
+
+msgctxt "#30038"
+msgid "No"
+msgstr ""
+
+msgctxt "#30039"
+msgid "klik om te veranderen"
+msgstr ""
+
+msgctxt "#30040"
+msgid "Nieuwe directory toevoegen"
+msgstr ""
+
+msgctxt "#30041"
+msgid "Aan bestaande directory toevoegen"
+msgstr ""
+
+msgctxt "#30042"
+msgid "Selecteer een icon voor deze directory ( optioneel )"
+msgstr ""
+
+msgctxt "#30043"
+msgid "Directory en inhoud verwijderen"
+msgstr ""
+
+msgctxt "#30044"
+msgid "Verwijder directory en verplaats inhoud naar root"
+msgstr ""
+
+msgctxt "#30101"
+msgid "Verwijder playlists bestand"
+msgstr ""
+
+msgctxt "#30102"
+msgid "Verwijder favorieten bestand"
+msgstr ""
