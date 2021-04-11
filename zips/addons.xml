@@ -78,6 +78,27 @@
 	</extension>
 </addon>
 
+<addon id="plugin.video.ghostplaylistloader" name="[COLOR orange]Ghost[/COLOR] Playlist Loader" version="1.0.0" provider-name="Yhe Ghost">
+  <requires>
+    <import addon="xbmc.python" version="3.0.0"/>
+    <import addon="script.module.requests" version="2.22.0"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+    <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en_GB">The Ghost Playlist Loader</summary>
+    <description lang="en_GB">Addon om uw M3U lijsten op een gemakkelijke manier toe te voegen binnen Kodi 19 Matrix.</description>
+	<disclaimer lang="en_GB">Deze addon bevat geen illegale content en maakt op geen enkele wijze deel uit van Kodi zelf.</disclaimer>
+    <language>en</language>
+    <platform>all</platform>
+    <assets>
+    <icon>icon.png</icon>
+    <fanart>fanart.jpg</fanart>
+  </assets>
+  </extension>
+</addon>
+
 <addon id="plugin.video.ghostsources" name="[COLOR orange]Ghost[/COLOR] Sources" version="1.0.0" provider-name="The Ghost">
   <requires>
     <import addon="xbmc.python" version="3.0.0" />
@@ -118,6 +139,39 @@
         <assets>
             <icon>icon.png</icon>
             <fanart>fanart.jpg</fanart>
+        </assets>
+    </extension>
+</addon>
+
+<addon id="script.service.ghostsponsorblock" version="1.0.0" name="[COLOR orange]Ghost[/COLOR] Sponsor Blok" provider-name="The Ghost,siku2">
+    <requires>
+        <import addon="script.module.requests" version="2.15.1"/>
+        <import addon="script.module.six" version="1.13.0"/>
+        <import addon="plugin.video.youtube" version="6.7.0"/>
+    </requires>
+
+    <extension point="xbmc.service" library="service.py"/>
+
+    <extension point="kodi.context.item">
+        <menu id="kodi.core.main">
+            <item library="context.py">
+                <label>32027</label>
+                <visible>String.IsEqual(ListItem.Property(Addon.ID),plugin.video.youtube)</visible>
+            </item>
+        </menu>
+    </extension>
+
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en_GB">Script om YouTube reclames te weren en geschikt voor Kodi 19 Matrix.</summary>
+        <description lang="en_GB">Dit script zorgt ervoor dat binnen YouTube videos de reclame eruit wordt gefilterd.</description>
+        <disclaimer lang="en_GB">Deze addon bevat geen illegale content en maakt op geen enkele wijze deel uit van Kodi zelf.</disclaimer>
+        </description>
+
+        <platform>all</platform>
+        <license>MIT</license>
+        <assets>
+            <icon>resources/images/icon.png</icon>
+            <fanart>resources/images/fanart.jpg</fanart>
         </assets>
     </extension>
 </addon>
