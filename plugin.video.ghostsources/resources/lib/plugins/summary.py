@@ -30,7 +30,7 @@ def repo_links(summary):
     import xbmcvfs
     import os
     links = re.findall(r"(https?://.*?)(?:\s|$)", urllib.parse.unquote_plus(summary))
-    choices = xbmcgui.Dialog().multiselect("Klik op de link en vervolgens op OK", links)
+    choices = xbmcgui.Dialog().multiselect("Click on the link then press OK", links)
     if not choices:
     	return
     setting_path= xbmcvfs.translatePath("special://userdata/sources.xml")
@@ -46,7 +46,7 @@ def repo_links(summary):
                         with open(setting_path, 'r') as f: 
                             content = f.read()                            
                             if link in content:
-                                xbmcgui.Dialog().ok('FOUT ','Bron bestaat reeds')
+                                xbmcgui.Dialog().ok('Error ','Source already exists')
                                 return 0
                             
                             files = source_regex.search(content).group(1)
@@ -88,4 +88,4 @@ def repo_links(summary):
                         '''
                     with open(setting_path, "w") as f:
                         f.write(output)
-    xbmcgui.Dialog().ok('Gereed','Kodi opnieuw opstarten om wijzigingen door te voeren')
+    xbmcgui.Dialog().ok('Done','Need to restart kodi for changes')
