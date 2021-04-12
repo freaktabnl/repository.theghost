@@ -7,10 +7,10 @@ from urllib.parse import parse_qs
 addon_id = xbmcaddon.Addon().getAddonInfo('id')
 
 '''#####-----Build File-----#####'''
-buildfile = 'https://ghostproject.nl/builds.json'
+buildfile = 'https://dutchghost.com/builds/builds.json'
 
 '''#####-----Notifications File-----#####'''
-notify_url  = 'https://ghostproject.nl/notify.txt'
+notify_url  = 'https://dutchghost.com/builds/notify.txt'
 
 '''#####-----Excludes-----#####'''
 EXCLUDES  = [addon_id, 'packages', 'Addons33.db', 'kodi.log']
