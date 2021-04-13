@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addons>
-<addon id="plugin.program.ghostcleaner" name="[COLOR orange]Ghost[/COLOR] Cleaner" version="2.0.0" provider-name="The Ghost">
+<addon id="plugin.program.ghostcleaner" name="[COLOR orange]Ghost[/COLOR] Cleaner" version="1.0.1" provider-name="The Ghost">
   <requires>
     <import addon="xbmc.python" version="3.0.0"/>
   </requires>
@@ -22,7 +22,7 @@
   </extension>
 </addon>
 
-<addon id="plugin.program.ghostopenwizard" name="[COLOR orange]Ghost[/COLOR] Open Wizard" version="2.0.0" provider-name="The Ghost">
+<addon id="plugin.program.ghostopenwizard" name="[COLOR orange]Ghost[/COLOR] Open Wizard" version="1.0.0" provider-name="The Ghost">
     <requires>
         <import addon="xbmc.python" version="3.0.0" />
         <import addon="script.module.requests" />
@@ -49,7 +49,7 @@
     </extension>
 </addon>
 
-<addon id="plugin.program.ghostwizard" name="[COLOR orange]Ghost[/COLOR] Wizard" version="2.0.0" provider-name="The Ghost">
+<addon id="plugin.program.ghostwizard" name="[COLOR orange]Ghost[/COLOR] Wizard" version="1.0.1" provider-name="The Ghost">
 	<requires>
 		<import addon="xbmc.python" version="3.0.0"/>
 	</requires>
@@ -78,7 +78,7 @@
 	</extension>
 </addon>
 
-<addon id="plugin.video.ghostplaylistloader" name="[COLOR orange]Ghost[/COLOR] Playlist Loader" version="2.0.0" provider-name="Yhe Ghost">
+<addon id="plugin.video.ghostplaylistloader" name="[COLOR orange]Ghost[/COLOR] Playlist Loader" version="1.0.1" provider-name="Yhe Ghost">
   <requires>
     <import addon="xbmc.python" version="3.0.0"/>
     <import addon="script.module.requests" version="2.22.0"/>
@@ -99,7 +99,7 @@
   </extension>
 </addon>
 
-<addon id="plugin.video.ghostsources" name="[COLOR orange]Ghost[/COLOR] Sources" version="2.0.0" provider-name="The Ghost">
+<addon id="plugin.video.ghostsources" name="[COLOR orange]Ghost[/COLOR] Sources" version="1.0.1" provider-name="The Ghost">
   <requires>
     <import addon="xbmc.python" version="3.0.0" />
     <import addon="script.module.requests" />
@@ -123,7 +123,7 @@
   </extension>
 </addon>
 
-<addon id="repository.theghost" name="[COLOR orange]The Ghost[/COLOR] Repository" version="2.0.0" provider-name="The Ghost">
+<addon id="repository.theghost" name="[COLOR orange]The Ghost[/COLOR] Repository" version="1.0.1" provider-name="The Ghost">
     <extension point="xbmc.addon.repository" name="Repository The Ghost">
         <dir>
             <info compressed="false">https://raw.githubusercontent.com/freaktabnl/repository.theghost/master/zips/addons.xml</info>
@@ -143,7 +143,7 @@
     </extension>
 </addon>
 
-<addon id="script.service.ghostsponsorblock" version="2.0.0" name="[COLOR orange]Ghost[/COLOR] Sponsor Blok" provider-name="The Ghost,siku2">
+<addon id="script.service.ghostsponsorblock" version="1.0.0" name="[COLOR orange]Ghost[/COLOR] Sponsor Blok" provider-name="The Ghost,siku2">
     <requires>
         <import addon="script.module.requests" version="2.15.1"/>
         <import addon="script.module.six" version="1.13.0"/>
@@ -170,13 +170,13 @@
         <platform>all</platform>
         <license>MIT</license>
         <assets>
-            <icon>resources/images/icon.png</icon>
-            <fanart>resources/images/fanart.jpg</fanart>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
         </assets>
     </extension>
 </addon>
 
-<addon id="service.ghostcleansubs" name="[COLOR orange]Ghost[/COLOR] CleanSubs" provider-name="The Ghost" version="2.0.0">
+<addon id="service.ghostcleansubs" name="[COLOR orange]Ghost[/COLOR] CleanSubs" provider-name="The Ghost" version="1.0.2">
   <requires>
     <import addon="xbmc.python" version="3.0.0" />
     <import addon="script.module.myconnpy" version="1.1.7" />
