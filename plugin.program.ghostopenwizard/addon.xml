@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.program.ghostopenwizard" name="[COLOR orange]Ghost[/COLOR] Open Wizard" version="1.0.0" provider-name="The Ghost">
+<addon id="plugin.program.ghostopenwizard" name="[COLOR orange]Ghost[/COLOR] Open Wizard" version="2.0.0" provider-name="The Ghost">
     <requires>
         <import addon="xbmc.python" version="3.0.0" />
         <import addon="script.module.requests" />
@@ -14,10 +14,11 @@
     <extension point="xbmc.service" library="startup.py" start="startup" />
     
     <extension point="xbmc.addon.metadata">
-        <summary lang="en">[COLOR orange]Ghost[/COLOR] Open Wizard Matrix</summary>
-        <description lang="en">[COLOR orange]Ghost[/COLOR] Open Wizard Kodi 19 Matrix bevat enkele onderhouds tools, onthoud inlog gegevens en instellingen en installeert uw eigen builds of die van andere. Dank aan Drinfernoo voor zijn kennis en bijdrage.</description>
-				<disclaimer lang="en_GB">Deze addon bevat geen illegale inhoud waar copyright op rust en is dus veilig om te installeren en maakt geen deel uit van Kodi.Dank aan Drinfernoo voor zijn kennis en bijdrages</disclaimer>
+        <summary lang="en_GB">[COLOR orange]Ghost[/COLOR] Open Wizard Matrix</summary>
+        <description lang="en_GB">[COLOR orange]Ghost[/COLOR] Open Wizard Kodi 19 Matrix bevat enkele onderhouds tools, onthoud inlog gegevens en instellingen en installeert uw eigen builds of die van andere. Dank aan Drinfernoo voor zijn kennis en bijdrage.</description>
+		<disclaimer lang="en_GB">Deze addon bevat geen illegale inhoud waar copyright op rust en is dus veilig om te installeren en maakt geen deel uit van Kodi.Dank aan Drinfernoo voor zijn kennis en bijdrages</disclaimer>
         <platform>all</platform>
+		<license>GPL-2.0-or-later</license>
         <reuselanguageinvoker>false</reuselanguageinvoker>
         <assets>
             <icon>icon.png</icon>

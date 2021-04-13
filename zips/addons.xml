@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addons>
-<addon id="plugin.program.ghostcleaner" name="[COLOR orange]Ghost[/COLOR] Cleaner" version="1.0.1" provider-name="The Ghost">
+<addon id="plugin.program.ghostcleaner" name="[COLOR orange]Ghost[/COLOR] Cleaner" version="2.0.0" provider-name="The Ghost">
   <requires>
     <import addon="xbmc.python" version="3.0.0"/>
   </requires>
@@ -22,7 +22,7 @@
   </extension>
 </addon>
 
-<addon id="plugin.program.ghostopenwizard" name="[COLOR orange]Ghost[/COLOR] Open Wizard" version="1.0.0" provider-name="The Ghost">
+<addon id="plugin.program.ghostopenwizard" name="[COLOR orange]Ghost[/COLOR] Open Wizard" version="2.0.0" provider-name="The Ghost">
     <requires>
         <import addon="xbmc.python" version="3.0.0" />
         <import addon="script.module.requests" />
@@ -37,10 +37,11 @@
     <extension point="xbmc.service" library="startup.py" start="startup" />
 
     <extension point="xbmc.addon.metadata">
-        <summary lang="en">[COLOR orange]Ghost[/COLOR] Open Wizard Matrix</summary>
-        <description lang="en">[COLOR orange]Ghost[/COLOR] Open Wizard Kodi 19 Matrix bevat enkele onderhouds tools, onthoud inlog gegevens en instellingen en installeert uw eigen builds of die van andere. Dank aan Drinfernoo voor zijn kennis en bijdrage.</description>
-				<disclaimer lang="en_GB">Deze addon bevat geen illegale inhoud waar copyright op rust en is dus veilig om te installeren en maakt geen deel uit van Kodi.Dank aan Drinfernoo voor zijn kennis en bijdrages</disclaimer>
+        <summary lang="en_GB">[COLOR orange]Ghost[/COLOR] Open Wizard Matrix</summary>
+        <description lang="en_GB">[COLOR orange]Ghost[/COLOR] Open Wizard Kodi 19 Matrix bevat enkele onderhouds tools, onthoud inlog gegevens en instellingen en installeert uw eigen builds of die van andere. Dank aan Drinfernoo voor zijn kennis en bijdrage.</description>
+		<disclaimer lang="en_GB">Deze addon bevat geen illegale inhoud waar copyright op rust en is dus veilig om te installeren en maakt geen deel uit van Kodi.Dank aan Drinfernoo voor zijn kennis en bijdrages</disclaimer>
         <platform>all</platform>
+		<license>GPL-2.0-or-later</license>
         <reuselanguageinvoker>false</reuselanguageinvoker>
         <assets>
             <icon>icon.png</icon>
@@ -49,36 +50,29 @@
     </extension>
 </addon>
 
-<addon id="plugin.program.ghostwizard" name="[COLOR orange]Ghost[/COLOR] Wizard" version="1.0.1" provider-name="The Ghost">
+<addon id="plugin.program.ghostwizard" name="[COLOR orange]Ghost[/COLOR] Wizard" version="2.0.0" provider-name="The Ghost">
 	<requires>
 		<import addon="xbmc.python" version="3.0.0"/>
 	</requires>
 	<extension point="xbmc.python.pluginsource" library="addon.py">
 		<provides>executable</provides>
 	</extension>
-	<extension point="xbmc.service" library="service.py" />
+	<extension point="xbmc.service" library="service.py"/>
 	<extension point="xbmc.addon.metadata">
 		<summary lang="en_GB">Ghost Wizard is een lichtgewicht template om builds te installeren op Kodi 19 Matrix.</summary>
 		<description lang="en_GB">Ghost Wizard is een lichtgewicht template om builds te installeren op Kodi 19 Matrix</description>
-	<disclaimer lang="en_GB">Deze addon bevat geen content en maakt op geen enkele wijze deel uit van Kodi zelf.</disclaimer>
+		<disclaimer lang="en_GB">Deze addon bevat geen content en maakt op geen enkele wijze deel uit van Kodi zelf.</disclaimer>
 		<platform>all</platform>
+		<license>GPL-2.0-or-later</license>
 		<reuselanguageinvoker>false</reuselanguageinvoker>
-
-		<forum></forum>
-		<website></website>
-		<email></email>
-		<source></source>
 		<assets>
 				<icon>resources/icon.png</icon>
 				<fanart>resources/fanart.png</fanart>
-				<banner></banner>
-				<clearlogo></clearlogo>
-				<screenshot></screenshot>
 		</assets>
 	</extension>
 </addon>
 
-<addon id="plugin.video.ghostplaylistloader" name="[COLOR orange]Ghost[/COLOR] Playlist Loader" version="1.0.1" provider-name="Yhe Ghost">
+<addon id="plugin.video.ghostplaylistloader" name="[COLOR orange]Ghost[/COLOR] Playlist Loader" version="2.0.0" provider-name="The Ghost">
   <requires>
     <import addon="xbmc.python" version="3.0.0"/>
     <import addon="script.module.requests" version="2.22.0"/>
@@ -90,8 +84,8 @@
     <summary lang="en_GB">The Ghost Playlist Loader</summary>
     <description lang="en_GB">Addon om uw M3U lijsten op een gemakkelijke manier toe te voegen binnen Kodi 19 Matrix.</description>
 	<disclaimer lang="en_GB">Deze addon bevat geen illegale content en maakt op geen enkele wijze deel uit van Kodi zelf.</disclaimer>
-    <language>en</language>
     <platform>all</platform>
+	<license>GPL-2.0-or-later</license>
     <assets>
     <icon>icon.png</icon>
     <fanart>fanart.jpg</fanart>
@@ -99,7 +93,7 @@
   </extension>
 </addon>
 
-<addon id="plugin.video.ghostsources" name="[COLOR orange]Ghost[/COLOR] Sources" version="1.0.1" provider-name="The Ghost">
+<addon id="plugin.video.ghostsources" name="[COLOR orange]Ghost[/COLOR] Sources" version="2.0.0" provider-name="The Ghost">
   <requires>
     <import addon="xbmc.python" version="3.0.0" />
     <import addon="script.module.requests" />
@@ -112,9 +106,7 @@
     <summary lang="en_GB">Kodis bedankt voor de code om repos toe te voegen vanuit het context menu. Alle repo hosts en addon ontwikkelaars ook hartelijk dank.</summary>
     <description lang="en_GB">Snel en simpel Kodi bronnen toevoegen aan bestandsbeheer. Geen enkele repo wordt gehost door deze addon. Alle bronnen zijn origineel en gemaakt door de addon ontwikkelaars zelf. The Ghost ontwikkeld en voorziet deze repos niet zelf van content.</description>
 	<disclaimer lang="en_GB">Deze addon bevat geen content en maakt op geen enkele wijze deel uit van Kodi zelf.</disclaimer>
-
     <platform>all</platform>
-    <language>en</language>
     <license>GPL-2.0-or-later</license>
     <assets>
     <icon>icon.png</icon>
@@ -123,7 +115,7 @@
   </extension>
 </addon>
 
-<addon id="repository.theghost" name="[COLOR orange]The Ghost[/COLOR] Repository" version="1.0.1" provider-name="The Ghost">
+<addon id="repository.theghost" name="[COLOR orange]The Ghost[/COLOR] Repository" version="2.0.0" provider-name="The Ghost">
     <extension point="xbmc.addon.repository" name="Repository The Ghost">
         <dir>
             <info compressed="false">https://raw.githubusercontent.com/freaktabnl/repository.theghost/master/zips/addons.xml</info>
@@ -136,6 +128,7 @@
         <description>Deze repository maakt geen deel uit van uw Kodi systeem maar met onze addons wordt het u weer een stuk makkelijker gemaakt</description>
         <disclaimer>Deze repository maakt geen deel uit van uw Kodi systeem.</disclaimer>
         <platform>all</platform>
+		<license>GPL-2.0-or-later</license>
         <assets>
             <icon>icon.png</icon>
             <fanart>fanart.jpg</fanart>
@@ -149,7 +142,6 @@
         <import addon="script.module.six" version="1.13.0"/>
         <import addon="plugin.video.youtube" version="6.7.0"/>
     </requires>
-
     <extension point="xbmc.service" library="service.py"/>
 
     <extension point="kodi.context.item">
@@ -176,7 +168,7 @@
     </extension>
 </addon>
 
-<addon id="service.ghostcleansubs" name="[COLOR orange]Ghost[/COLOR] CleanSubs" provider-name="The Ghost" version="1.0.2">
+<addon id="service.ghostcleansubs" name="[COLOR orange]Ghost[/COLOR] CleanSubs" provider-name="The Ghost" version="2.0.0">
   <requires>
     <import addon="xbmc.python" version="3.0.0" />
     <import addon="script.module.myconnpy" version="1.1.7" />
@@ -192,14 +184,11 @@
     <summary lang="en_GB">Service addon om ondertitels op te schonen.</summary>
     <description lang="en_GB">Deze service addon verwijderd alle onnodige tekst binnen de ondertitels zoals bijvoorbeeld reclames.</description>
 	<disclaimer lang="en_GB">Deze addon bevat geen illegale content en maakt op geen enkele wijze deel uit van Kodi zelf.</disclaimer>
+	<platform>all</platform>
 	<license>GPL-2.0-or-later</license>
     <assets>
         <icon>icon.png</icon>
         <fanart>fanart.jpg</fanart>
-        <screenshot>resources/screenshot-01.jpg</screenshot>
-        <screenshot>resources/screenshot-02.jpg</screenshot>
-        <screenshot>resources/screenshot-03.jpg</screenshot>
-        <banner>resources/banner.jpg</banner>
         <logo>resources/logo.png</logo>
     </assets>
   </extension>

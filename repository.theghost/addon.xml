@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="repository.theghost" name="[COLOR orange]The Ghost[/COLOR] Repository" version="1.0.1" provider-name="The Ghost">
+<addon id="repository.theghost" name="[COLOR orange]The Ghost[/COLOR] Repository" version="2.0.0" provider-name="The Ghost">
     <extension point="xbmc.addon.repository" name="Repository The Ghost">
         <dir>
             <info compressed="false">https://raw.githubusercontent.com/freaktabnl/repository.theghost/master/zips/addons.xml</info>
@@ -12,6 +12,7 @@
         <description>Deze repository maakt geen deel uit van uw Kodi systeem maar met onze addons wordt het u weer een stuk makkelijker gemaakt</description>
         <disclaimer>Deze repository maakt geen deel uit van uw Kodi systeem.</disclaimer>
         <platform>all</platform>
+		<license>GPL-2.0-or-later</license>
         <assets>
             <icon>icon.png</icon>
             <fanart>fanart.jpg</fanart>
