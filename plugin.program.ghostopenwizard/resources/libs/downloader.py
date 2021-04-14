@@ -22,6 +22,7 @@ import xbmcgui
 
 import requests
 import sys
+import os
 import time
 
 from resources.libs.common import logging
@@ -35,15 +36,18 @@ class Downloader:
         self.progress_dialog = xbmcgui.DialogProgress()
 
     def download(self, url, dest):
-        self.progress_dialog.create(CONFIG.ADDONTITLE, "Downloading Content")
+        self.progress_dialog.create(CONFIG.ADDONTITLE, "Downloading Content", ' ', ' ')
         self.progress_dialog.update(0)
-
+        
+        path = os.path.split(dest)[0]
+        if not os.path.exists(path):
+            os.makedirs(path)
         with open(dest, 'wb') as f:
             response = tools.open_url(url, stream=True)
             
             if not response:
                 logging.log_notify(CONFIG.ADDONTITLE,
-                                   '[COLOR {0}]Build installatie: Ongeldige Zip Url![/COLOR]'.format(CONFIG.COLOR2))
+                                   '[COLOR {0}]Build Install: Invalid Zip Url![/COLOR]'.format(CONFIG.COLOR2))
                 return
             else:
                 total = response.headers.get('content-length')
@@ -75,9 +79,9 @@ class Downloader:
                         kbps_speed = kbps_speed / 1024
                         type_speed = 'MB'
                         
-                    currently_downloaded = '[COLOR %s][B]Grote:[/B] [COLOR %s]%.02f[/COLOR] MB van [COLOR %s]%.02f[/COLOR] MB[/COLOR]' % (CONFIG.COLOR2, CONFIG.COLOR1, downloaded / mb, CONFIG.COLOR1, total / mb)
-                    speed = '[COLOR %s][B]Snelheid:[/B] [COLOR %s]%.02f [/COLOR]%s/s ' % (CONFIG.COLOR2, CONFIG.COLOR1, kbps_speed, type_speed)
+                    currently_downloaded = '[COLOR %s][B]Size:[/B] [COLOR %s]%.02f[/COLOR] MB of [COLOR %s]%.02f[/COLOR] MB[/COLOR]' % (CONFIG.COLOR2, CONFIG.COLOR1, downloaded / mb, CONFIG.COLOR1, total / mb)
+                    speed = '[COLOR %s][B]Speed:[/B] [COLOR %s]%.02f [/COLOR]%s/s ' % (CONFIG.COLOR2, CONFIG.COLOR1, kbps_speed, type_speed)
                     div = divmod(eta, 60)
                     speed += '[B]ETA:[/B] [COLOR %s]%02d:%02d[/COLOR][/COLOR]' % (CONFIG.COLOR1, div[0], div[1])
                     
-                    self.progress_dialog.update(done, '\n' + str(currently_downloaded) + '\n' + str(speed)) 
+                    self.progress_dialog.update(done, '', currently_downloaded, speed)
