@@ -1,0 +1,158 @@
+# Kodi Media Center language file
+# Addon Name: Ghost CleanSubs
+# Addon id: service.ghostcleansubs
+# Addon Provider: The Ghost
+msgid ""
+msgstr ""
+"Project-Id-Version: Kodi Addons\n"
+"Report-Msgid-Bugs-To: https://forum.kodi.tv/\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Kodi Translation Team\n"
+"Language-Team: Team-Kodi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: nl_NL\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+msgctxt "#30000"
+msgid "CleanSubs General"
+msgstr "Ghost CleanSubs algemeen"
+
+msgctxt "#30001"
+msgid "CleanSubs on"
+msgstr "Ghost CleanSubs aan"
+
+msgctxt "#30002"
+msgid "Display icon overlay to confirm subs were cleaned"
+msgstr "Weergave icoon overlay om geschoonde ondertitels te bevestigen"
+
+msgctxt "#30003"
+msgid "Display icon overlay of subs provider"
+msgstr "Weergave icoon overlay van ondertitel leverancier"
+
+msgctxt "#30004"
+msgid "Subtitles cleaning method"
+msgstr "Ondertitel opschoon methode"
+
+msgctxt "#30005"
+msgid "Folder for manual subtitles cleaning"
+msgstr "Map voor handmatige ondertitel opschoning"
+
+msgctxt "#30007"
+msgid "Remove CC from subtitles"
+msgstr "Verwijder CC uit ondertitels"
+
+msgctxt "#30008"
+msgid "Heuristics removes first/last x lines"
+msgstr "Heuristiek verwijdert eerste/laatste x regels"
+
+msgctxt "#30009"
+msgid "Use languages from Kodi settings"
+msgstr "Gebruik alleen talen van Kodi instellingen"
+
+msgctxt "#30011"
+msgid "Use definitions and heuristics"
+msgstr "Gebruik definities en heuristiek"
+
+msgctxt "#30012"
+msgid "Use heuristics only"
+msgstr "Gebruik alleen heuristiek"
+
+msgctxt "#30013"
+msgid "Use definitions only"
+msgstr "Gebruik alleen definities"
+
+msgctxt "#30020"
+msgid "Definitions not found! See log for more details."
+msgstr "Definities niet gevonden! Zie log voor meer informatie."
+
+msgctxt "#30021"
+msgid "CLEANED!"
+msgstr "OPGERUIMD!"
+
+msgctxt "#30030"
+msgid "Choose what to scan:"
+msgstr "Kies wat je wilt scannen:"
+
+msgctxt "#30031"
+msgid "Scan and clean subtitle files in [COLOR red]video libraries[/COLOR]?"
+msgstr "Scan en schoon ondertitel bestanden op in [COLOR red]video bibliotheken[/COLOR]?"
+
+msgctxt "#30032"
+msgid "Scan and clean subtitle files in [COLOR red]arbitrary folder[/COLOR]:"
+msgstr "Scan en schoon ondertitel bestanden op in [COLOR red]willekeurige map[/COLOR]:"
+
+msgctxt "#30033"
+msgid "No [COLOR red]video libraries[/COLOR] found!"
+msgstr "Geen [COLOR red]video bibliotheken[/COLOR] gevonden!"
+
+msgctxt "#30034"
+msgid "[COLOR red]Arbitrary folder[/COLOR] not found or not set!"
+msgstr "[COLOR red]Willekeurige map[/COLOR] niet gevonden of niet ingesteld!"
+
+msgctxt "#30035"
+msgid "Start scan"
+msgstr "Start scan"
+
+msgctxt "#30036"
+msgid "Error"
+msgstr "Fout"
+
+msgctxt "#30040"
+msgid "Scanning for subtitles"
+msgstr "Scannen naar ondertitels"
+
+msgctxt "#30041"
+msgid "Scanning folders and cleaning subtitles..."
+msgstr "Mappen scannen en schoonmaken ondertitels..."
+
+msgctxt "#30050"
+msgid "Subtitles cleanup [COLOR red]interrupted[/COLOR]."
+msgstr "Ondertitel opschoning [COLOR red]onderbroken[/COLOR]."
+
+msgctxt "#30051"
+msgid "Subtitles cleanup [COLOR red]done[/COLOR]."
+msgstr "Ondertitel opschoning [COLOR red]gereed[/COLOR]."
+
+msgctxt "#30052"
+msgid "NFS paths are [COLOR red]not supported[/COLOR], please use NFS paths at System (OS) level!"
+msgstr "NFS paden worden [COLOR red]niet ondersteund[/COLOR], gebruik aub NFS paden op Systeem (OS) niveau!"
+
+msgctxt "#30060"
+msgid "Settings"
+msgstr "Instellingen"
+
+msgctxt "#30061"
+msgid "Arbitrary folder"
+msgstr "Willekeurige map"
+
+msgctxt "#30062"
+msgid "not set"
+msgstr "niet gezet"
+
+msgctxt "#30063"
+msgid "Video libraries"
+msgstr "Video bibliotheken"
+
+msgctxt "#30064"
+msgid "found"
+msgstr "gevonden"
+
+msgctxt "#30100"
+msgid "Delete original subs (path/lib clean)"
+msgstr "Verwijder originele ondertitels"
+
+msgctxt "#30101"
+msgid "Remove formatting + colors"
+msgstr "Verwijder opmaak + kleuren"
+
+msgctxt "#30102"
+msgid "Display background under subtitles"
+msgstr "Achtergrond onder ondertiteling"
+
+msgctxt "#30103"
+msgid "Subtitles text color (RRGGBB)"
+msgstr "Tekstkleur van de ondertiteling (RRGGBB)"
+
