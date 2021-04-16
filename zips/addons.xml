@@ -1,5 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addons>
+<addon id="plugin.program.ghostautoactivatie" name="[COLOR orange]Ghost[/COLOR] Auto activatie addons" version="1.0.0" provider-name="Slam, The Ghost">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>executable</provides>
+    </extension>
+    <extension point="xbmc.service" library="service.py" />
+    <extension point="xbmc.addon.metadata">
+	     <platform>all</platform>
+        <summary lang="en_GB">Ghost auto activatie addons script</summary>
+        <description lang="en_GB">Dit script schakelt automatisch alle addons aan welke op uitgeschakeld staan. Zie tevens het menu van deze addon. Slam bedankt voor originele script.</description>
+		<disclaimer lang="en_GB">Deze addon bevat geen illegale content en maakt op geen enkele wijze deel uit van Kodi zelf.</disclaimer>
+        <license>GPL-2.0-only</license>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+        </assets>
+    </extension>
+</addon>
+
 <addon id="plugin.program.ghostcleaner" name="[COLOR orange]Ghost[/COLOR] Cleaner" version="2.0.0" provider-name="The Ghost">
   <requires>
     <import addon="xbmc.python" version="3.0.0"/>
