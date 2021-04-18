@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="plugin.video.ghostplaylistloader" name="[COLOR orange]Ghost[/COLOR] Playlist Loader" version="1.0.1" provider-name="The Ghost, Publish3r">
+  <requires>
+    <import addon="xbmc.python" version="3.0.0"/>
+    <import addon="script.module.requests" version="2.22.0"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+    <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en_GB">The Ghost Playlist Loader</summary>
+    <description lang="en_GB">Handige addon om uw eigen m3u url in te voeren en af te spelen binnen Kodi.</description>
+    <disclaimer lang="en_GB">Deze addon bevat geen content en maakt op geen enkele wijze deel uit van Kodi zelf.</disclaimer>
+    <platform>all</platform>
+      <assets>
+		<icon>icon.png</icon>
+		<fanart>fanart.png</fanart>
+    </assets>
+  </extension>
+</addon>
