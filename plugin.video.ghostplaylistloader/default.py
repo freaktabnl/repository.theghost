@@ -78,7 +78,7 @@ def AddListItems(chList, addToVdir=True):
 def Categories():
     AddDir("[B]{0}: {1}[/B] - {2} ".format(getLocaleString(30036), getLocaleString(30037) if makeGroups else getLocaleString(30038), getLocaleString(30039)), "setting", 50, os.path.join(iconsDir, "setting.png"), isFolder=False)
     AddDir("[COLOR white][B][{0}][/B][/COLOR]".format(getLocaleString(30003)), "favorites", 30, os.path.join(iconsDir, "bright_yellow_star.png"))
-    AddDir("[COLOR yellow][B]{0}[/B][/COLOR]".format(getLocaleString(30001)), "newList", 20, os.path.join(iconsDir, "NewList.ico"), isFolder=False)
+    AddDir("[COLOR yellow][B]{0}[/B][/COLOR]".format(getLocaleString(30001)), "newList", 20, os.path.join(iconsDir, "NewList.png"), isFolder=False)
     AddDir("[COLOR yellow][B]{0}[/B][/COLOR]".format(getLocaleString(30040)), "newDirectory", 43, os.path.join(iconsDir, "New-folder.png"), isFolder=False)
 
     # Displaying virtual directories.
