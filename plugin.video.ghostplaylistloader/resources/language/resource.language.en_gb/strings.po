@@ -173,23 +173,23 @@ msgid "klik om te veranderen"
 msgstr ""
 
 msgctxt "#30040"
-msgid "Nieuwe directorie toevoegen"
+msgid "Nieuwe map toevoegen"
 msgstr ""
 
 msgctxt "#30041"
-msgid "Aan huidige directorie toevoegen"
+msgid "Aan huidige map toevoegen"
 msgstr ""
 
 msgctxt "#30042"
-msgid "Icon selecteren voor deze directorie( optioneel )"
+msgid "Icon selecteren voor deze map( optioneel )"
 msgstr ""
 
 msgctxt "#30043"
-msgid "Verwijder directorie en inhoudt"
+msgid "Verwijder map en inhoudt"
 msgstr ""
 
 msgctxt "#30044"
-msgid "Verwijder directorie en verplaatst naar root"
+msgid "Verwijder map en verplaatst naar root"
 msgstr ""
 
 msgctxt "#30101"

@@ -369,7 +369,7 @@ def AddFavorites(url, iconimage, name):
 
 
 def AddNewDirectory():
-    dir_name = GetKeyboardText(getLocaleString(30040), "My new directory name")
+    dir_name = GetKeyboardText(getLocaleString(30040), "Nieuwe naam van map")
     dir_icon = xbmcgui.Dialog().browse(1, getLocaleString(30042), 'files')
     
     if dir_name != "":
@@ -385,7 +385,7 @@ def AddToDirectory(playlist_uuid):
     vdirs = common.ReadList(vDirectoriesFile)
         
     dialog = xbmcgui.Dialog()
-    svdir = dialog.select("Choose the directory were to attach this playlist", [item["name"] for item in vdirs])
+    svdir = dialog.select("Kies een map om deze lijst aan te koppelen", [item["name"] for item in vdirs])
     vdirs[svdir]["data"].append(playlist_uuid)
     common.SaveList(vDirectoriesFile, vdirs)
     xbmc.executebuiltin("Container.Refresh()")
