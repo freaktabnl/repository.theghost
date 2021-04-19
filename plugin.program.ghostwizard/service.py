@@ -21,10 +21,10 @@ def check_updates():
     	except:
     		builds = ET.fromstring(response)
     		for tag in builds.findall('build'):
-    			if tag.get('name') == current_build:
+    			if tag.find('name').text== current_build:
     				version = float(tag.find('version').text)
     	if version > current_version:
-    		xbmcgui.Dialog().ok(addon_name, 'Er is een nieuwe versie van ' + current_build +' beschikbaar.' + '\n' + 'Huidige versie: ' + str(current_version) + '\n' + 'Nieuwe versie: ' + str(version) + '\n' + 'Bijwerken kan vanuit build menu ' + addon_name + '.')
+    		xbmcgui.Dialog().ok(addon_name, 'Een nieuwe versie van ' + current_build +' is beschikbaar.' + '\n' + 'Huidige versie: ' + str(current_version) + '\n' + 'Nieuwe versie: ' + str(version) + '\n' + 'Update uw huidige build bij via het build menu ' + addon_name + '.')
     	else:
     		return
     else:
@@ -32,9 +32,9 @@ def check_updates():
     	
 def save_menu():
 	save_items = []
-	choices = ["Favorieten", "Bronnen", "Debrid - Resolve URL", "Geavanceerde instellingen"]
+	choices = ["Favourites", "Sources", "Debrid - Resolve URL", "Advanced Settings"]
 	dialog = xbmcgui.Dialog()
-	save_select = dialog.multiselect(addon_name + " - Klik aan wat u wilt bewaren tijdens installatie build.",choices, preselect=[])
+	save_select = dialog.multiselect(addon_name + " - Wat dient er bewaard te worden tijdens nieuwe installatie.",choices, preselect=[])
 	
 	if save_select == None:
 		return
@@ -77,15 +77,15 @@ if __name__ == '__main__':
 	if not setting('firstrunSave')=='true':
 		save_menu()
 		
-	#from resources.lib.GUIcontrol.notify import get_notifyversion
-	#notify_version = get_notifyversion()	
-	#if not setting('firstrunNotify')=='true' or notify_version > int(setting('notifyversion')):
-		#from resources.lib.GUIcontrol import notify
-		#d=notify.notify()
-		#d.doModal()
-		#del d
-		#setting_set('firstrunNotify', 'true')
-		#setting_set('notifyversion', str(notify_version))
+	from resources.lib.GUIcontrol.notify import get_notifyversion
+	notify_version = get_notifyversion()	
+	if not setting('firstrunNotify')=='true' or notify_version > int(setting('notifyversion')):
+		from resources.lib.GUIcontrol import notify
+		d=notify.notify()
+		d.doModal()
+		del d
+		setting_set('firstrunNotify', 'true')
+		setting_set('notifyversion', str(notify_version))
 		
 	check_updates()
 	
