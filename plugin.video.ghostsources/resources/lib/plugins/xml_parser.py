@@ -5,7 +5,7 @@ from typing import Dict, Union
 
 class xml(Plugin):
     name = "xml"
-    description = "Nu ook geschikt voor xml jen formaat"
+    description = "add support for xml jen format"
     priority = 0
 
     def parse_list(self, url: str, response):
