@@ -1,0 +1,3 @@
+v1.0.0 (2019-12-28):
+- initial version
+- Only RTL 4/5/7/8 episodes can be played, use the Retrospect Addon for other channels !!!!!
