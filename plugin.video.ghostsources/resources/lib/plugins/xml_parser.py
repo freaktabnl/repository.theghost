@@ -5,11 +5,11 @@ from typing import Dict, Union
 
 class xml(Plugin):
     name = "xml"
-    description = "add support for xml jen format"
+    description = "Nu ook geschikt voor xml jen formaat"
     priority = 0
 
     def parse_list(self, url: str, response):
-        if url.startswith("https://"):
+        if url.startswith("https://") or url.endswith(".xml") or response.startswith("<xml>"):
             response = response
             try:
                 xml = ET.fromstring(response)
