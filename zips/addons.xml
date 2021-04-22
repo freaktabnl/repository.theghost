@@ -93,6 +93,76 @@
 	</extension>
 </addon>
 
+<addon
+	id="plugin.video.dumpert"
+	name="[COLOR orange]Ghost[/COLOR] Dumpert"
+	version="1.0.0"
+	provider-name="Skipmode A1">
+  <requires>
+    <import addon="xbmc.python"                     version="3.0.0"/>
+	<import addon="script.module.beautifulsoup4"    version="4.3.2"/>
+    <import addon="script.module.requests"          version="2.4.3"/>
+    <import addon="script.module.future"            version="0.0.1"/>
+  	<import addon="script.module.html5lib"          version="0.999.0"/>
+    <import addon="plugin.video.youtube"            version="5.1.7"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" 	library="addon.py">
+    <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en_GB">Watch funny videos from Dumpert.nl (dutch)</summary>
+    <summary lang="nl_NL">Bekijk grappige filmpjes van Dumpert.nl (dutch)</summary>
+        <description lang="nl_NL">Bekijk grappige filmpjes van Dumpert.nl (dutch)</description>
+        <disclaimer lang="nl_NL">Bugs of andere feedback op deze plugin kan geplaatst worden in de Dumpert.nl thread op het Kodi forum.</disclaimer>
+    <language>nl</language>
+    <platform>all</platform>
+    <license>GNU GENERAL PUBLIC LICENSE. Version 3, June 2007</license>
+    <forum>https://forum.kodi.tv/showthread.php?tid=162635</forum>
+    <website>https://dumpert.nl</website>
+    <source>https://github.com/skipmodea1/plugin.video.dumpert.python3</source>
+    <assets>
+      <icon>resources/icon.png</icon>
+      <fanart>resources/fanart.jpg</fanart>
+    </assets>
+  </extension>
+</addon>
+
+<addon
+    id="plugin.video.gamekings"
+    name="[COLOR orange]Ghost[/COLOR] GameKings"
+    version="1.0.0"
+    provider-name="Skipmode A1">
+  <requires>
+    <import addon="xbmc.python"                     version="3.0.0"/>
+    <import addon="script.module.beautifulsoup4"    version="4.3.2"/>
+    <import addon="script.module.requests"          version="2.4.3"/>
+    <import addon="script.module.future"            version="0.0.1"/>
+    <import addon="script.module.html5lib"          version="0.999.0"/>
+    <import addon="plugin.video.youtube" 		    version="5.1.7" />
+  </requires>
+  <extension point="xbmc.python.pluginsource" 	library="addon.py">
+    <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="nl_NL">Bekijk videos van Gamekings.tv (dutch)</summary>
+      <description lang="nl_NL">Bekijk videos van Gamekings.tv (dutch)</description>
+      <disclaimer lang="nl_NL">Bugs of andere feedback op deze plugin kan geplaatst worden in de Gamekings.tv thread op het Kodi forum.</disclaimer>
+    <language>nl</language>
+    <platform>all</platform>
+	<license>GPL-2.0-or-later</license>
+    <forum>https://forum.kodi.tv/showthread.php?tid=161375</forum>
+    <website>https://www.gamekings.tv</website>
+    <source>https://github.com/skipmodea1/plugin.video.gamekings.python3</source>
+    <news>v1.2.19 (2020-11-10)
+    - fixed premium videos after a website change
+    </news>
+    <assets>
+      <icon>resources/icon.png</icon>
+      <fanart>resources/fanart.jpg</fanart>
+    </assets>
+  </extension>
+</addon>
+
 <addon id="plugin.video.ghostplaylistloader" name="[COLOR orange]Ghost[/COLOR] Playlist Loader" version="1.0.4" provider-name="The Ghost, Publish3r">
   <requires>
     <import addon="xbmc.python" version="3.0.0"/>
@@ -133,6 +203,112 @@
     <icon>icon.png</icon>
     <fanart>fanart.jpg</fanart>
   </assets>
+  </extension>
+</addon>
+
+<addon
+	id="plugin.video.nlhardwareinfo"
+	name="[COLOR orange]Ghost[/COLOR] Hardware Info TV"
+	version="1.0.0"
+	provider-name="Skipmode A1">
+  <requires>
+    <import addon="xbmc.python"                     version="3.0.0"/>
+	<import addon="script.module.beautifulsoup4"    version="4.3.2"/>
+    <import addon="script.module.requests"          version="2.4.3"/>
+    <import addon="script.module.future"            version="0.0.1"/>
+  	<import addon="script.module.html5lib"          version="0.999.0"/>
+	<import addon="plugin.video.youtube" 		    version="5.1.7" />
+  </requires>
+	<extension point="xbmc.python.pluginsource" library="addon.py">
+		<provides>video</provides>
+	</extension>
+  <extension point="xbmc.addon.metadata">
+	<platform>all</platform>
+    <summary lang="nl_NL">Hardware.Info TV is een webcast waarin de redactie van Hardware.Info de nieuwste hardware, gadgets en consumentenelektronica bespreekt.</summary>
+    <description lang="nl_NL">Hardware.Info TV is een webcast waarin de redactie van Hardware.Info de nieuwste hardware, gadgets en consumentenelektronica bespreekt. Via deze plugin kun je de afleveringen van Hardware.Info TV eenvoudig in HD-kwaliteit via Kodi bekijken.</description>
+    <disclaimer lang="nl_NL">Bugs of andere feedback op deze plugin kan geplaatst worden in de Hardware.Info thread op het Kodi forum.</disclaimer>
+    <language>nl</language>
+    <platform>all</platform>
+	<license>GPL-2.0-or-later</license>
+    <forum>http://forum.kodi.tv/showthread.php?tid=162123</forum>
+    <website>http://nl.hardware.info/</website>
+    <source>https://github.com/skipmodea1/plugin.video.nlhardwareinfo.python3</source>
+    <assets>
+      <icon>resources/icon.png</icon>
+      <fanart>resources/fanart.jpg</fanart>
+    </assets>
+  </extension>
+</addon>
+
+<addon
+	id="plugin.video.tweakers"
+	name="[COLOR orange]Ghost[/COLOR] Tweakers"
+	version="1.0.0"
+	provider-name="Skipmode A1">
+  <requires>
+    <import addon="xbmc.python"                     version="3.0.0"/>
+	<import addon="script.module.beautifulsoup4"    version="4.3.2"/>
+    <import addon="script.module.requests"          version="2.4.3"/>
+    <import addon="script.module.future"            version="0.16.0.1"/>
+  	<import addon="script.module.html5lib"          version="0.999.0"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" 	library="addon.py">
+    <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+	<disclaimer lang="en_GB">For bugs, requests or general questions visit the tweakers.net thread on the Kodi forum.</disclaimer>
+	<summary lang="nl_NL">Bekijk technologie videos van Tweakers.net (dutch)</summary>
+	<description lang="nl_NL">Bekijk technologie videos van Tweakers.net (dutch)</description>
+	<disclaimer lang="nl_NL">Bugs of andere feedback op deze plugin kan geplaatst worden in de Tweakers.net thread op het Kodi forum.</disclaimer>
+    <language>nl</language>
+	<license>GPL-2.0-or-later</license>
+    <forum>https://forum.kodi.tv/showthread.php?tid=167812</forum>
+    <website>https://www.tweakers.net</website>
+    <source>https://github.com/skipmodea1/plugin.video.tweakers.python3</source>
+  	<platform>all</platform>
+    <news>v1.1.10 (2018-10-01)
+    - removing non-ascii characters in title in parameters to prevent UnicodeDecodeError: 'ascii' codec can't decode ...
+    The error occured when doing urllib.parse.parse_qs of the parameters
+    - using youtube now (website change)
+    - removed video quality setting as the youtube addon is used
+    </news>
+    <assets>
+      <icon>resources/icon.png</icon>
+      <fanart>resources/fanart.jpg</fanart>
+    </assets>
+  </extension>
+</addon>
+
+<addon
+	id="plugin.video.uitzendinggemistnet"
+	name="[COLOR orange]Ghost[/COLOR] Uitzendinggemistnet"
+	version="1.0.0"
+	provider-name="Skipmode A1">
+  <requires>
+    <import addon="xbmc.python"                     version="3.0.0"/>
+	<import addon="script.module.beautifulsoup4"    version="4.3.2"/>
+    <import addon="script.module.requests"          version="2.4.3"/>
+    <import addon="script.module.future"            version="0.0.1"/>
+  	<import addon="script.module.html5lib"          version="0.999.0"/>
+	<import addon="script.module.youtube.dl"        version="0.0.1"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" 	library="addon.py">
+    <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+	<summary lang="nl_NL">Bekijk nederlandse TV uitzendingen van de afgelopen 2 weken avn RTL 4/5/7/8</summary>
+	<description lang="nl_NL">Bekijk nederlandse TV uitzendingen van de afgelopen 2 weken van RTL 4/5/7/8. Alle andere kunt u vinden in de addon Retrospect.</description>
+	<disclaimer lang="nl_NL">Bugs of andere feedback op deze plugin kan geplaatst worden in de uitzendinggemistnet thread op het Kodi forum.</disclaimer>
+    <language>nl</language>
+    <platform>all</platform>
+	<license>GPL-2.0-or-later</license>
+    <forum>http://forum.xbmc.org/showthread.php?tid=xxxxxx</forum>
+    <website>http://uitzendinggemist.net</website>
+    <source>https://github.com/skipmodea1/plugin.video.uitzendinggemistnet.python3</source>
+    <assets>
+      <icon>resources/icon.png</icon>
+      <fanart>resources/fanart.jpg</fanart>
+    </assets>
   </extension>
 </addon>
 
