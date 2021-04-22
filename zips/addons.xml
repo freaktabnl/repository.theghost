@@ -96,7 +96,7 @@
 <addon
 	id="plugin.video.dumpert"
 	name="[COLOR orange]Ghost[/COLOR] Dumpert"
-	version="1.0.0"
+	version="5.0.0"
 	provider-name="Skipmode A1">
   <requires>
     <import addon="xbmc.python"                     version="3.0.0"/>
@@ -130,7 +130,7 @@
 <addon
     id="plugin.video.gamekings"
     name="[COLOR orange]Ghost[/COLOR] GameKings"
-    version="1.0.0"
+    version="5.0.0"
     provider-name="Skipmode A1">
   <requires>
     <import addon="xbmc.python"                     version="3.0.0"/>
@@ -206,10 +206,33 @@
   </extension>
 </addon>
 
+<addon id="plugin.video.hanssettings" name="[COLOR orange]Ghost[/COLOR] Kanalenlijst Hans" provider-name="Bas Magré, The Ghost" version="1.0.0">
+  <requires>
+    <!--<import addon="xbmc.python" version="3.0.0"/>-->
+    <import addon="script.common.plugin.cache" version="2.6.1"/>
+  </requires>
+  <extension library="addon.py" point="xbmc.python.pluginsource">
+    <provides>audio video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <license>GNU GENERAL PUBLIC LICENSE. Version 3, June 2007</license>
+    <language>nl</language>
+    <platform>all</platform>
+    <source>https://github.com/Opvolger/plugin.video.hanssettings/</source>
+    <summary lang="nl_NL">Kanalenlijst Hans - Bekijk gratis streams van de Transponder</summary>
+    <description lang="nl_NL">Kanalenlijst Hans (maar dan alleen de streams) - Bekijk gratis streams van de Transponder</description>
+	<disclaimer lang="en_GB">Deze addon bevat geen illegale content en maakt op geen enkele wijze deel uit van Kodi zelf.</disclaimer>
+  <assets>
+		<icon>icon.png</icon>
+		<fanart>fanart.png</fanart>
+  </assets>
+  </extension>
+</addon>
+
 <addon
 	id="plugin.video.nlhardwareinfo"
 	name="[COLOR orange]Ghost[/COLOR] Hardware Info TV"
-	version="1.0.0"
+	version="5.0.0"
 	provider-name="Skipmode A1">
   <requires>
     <import addon="xbmc.python"                     version="3.0.0"/>
@@ -243,7 +266,7 @@
 <addon
 	id="plugin.video.tweakers"
 	name="[COLOR orange]Ghost[/COLOR] Tweakers"
-	version="1.0.0"
+	version="5.0.0"
 	provider-name="Skipmode A1">
   <requires>
     <import addon="xbmc.python"                     version="3.0.0"/>
@@ -282,7 +305,7 @@
 <addon
 	id="plugin.video.uitzendinggemistnet"
 	name="[COLOR orange]Ghost[/COLOR] Uitzendinggemistnet"
-	version="1.0.0"
+	version="5.0.0"
 	provider-name="Skipmode A1">
   <requires>
     <import addon="xbmc.python"                     version="3.0.0"/>
@@ -308,6 +331,29 @@
     <assets>
       <icon>resources/icon.png</icon>
       <fanart>resources/fanart.jpg</fanart>
+    </assets>
+  </extension>
+</addon>
+
+<addon id="plugin.video.uzg" name="[COLOR orange]Ghost[/COLOR] NPO Start" provider-name="The Ghost, Bas Magré" version="1.0.0">
+  <requires>
+    <!-- <import addon="xbmc.python" version="2.25.0" /> -->
+    <import addon="script.module.inputstreamhelper" version="0.5.2" />
+    <import addon="script.common.plugin.cache" version="2.6.1"/>
+  </requires>
+  <extension library="addon.py" point="xbmc.python.pluginsource">
+<provides>audio video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <language>nl</language>
+    <platform>all</platform>
+    <summary lang="en_GB">NPO Start - Bekijk gratis videos van NPO Start en luister naar de verschillende radio streams (Werkt alleen met nederlands ip-adres)</summary>
+    <description lang="en_GB">NPO Start, videos van NED1 / NED2 / NED3 en luister naar de verschillende radio streams(Werkt alleen met nederlands ip-adres, dus indien in buitenland VPN gebruiken.)</description>
+    <disclaimer lang="en_GB">Deze addon bevat geen illegale content en maakt op geen enkele wijze deel uit van Kodi zelf.</disclaimer>
+     <license>GPL-2.0-only</license>
+    <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
     </assets>
   </extension>
 </addon>

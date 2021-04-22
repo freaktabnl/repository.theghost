@@ -2,7 +2,7 @@
 <addon 
 	id="plugin.video.tweakers" 
 	name="[COLOR orange]Ghost[/COLOR] Tweakers" 
-	version="1.0.0"
+	version="5.0.0"
 	provider-name="Skipmode A1">
   <requires>
     <import addon="xbmc.python"                     version="3.0.0"/>
