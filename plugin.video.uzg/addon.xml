@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.video.uzg" name="[COLOR orange]Ghost[/COLOR] NPO Start" provider-name="The Ghost, Bas Magré" version="1.0.0">
+<addon id="plugin.video.uzg" name="[COLOR orange]Ghost[/COLOR] NPO Start" provider-name="The Ghost, Bas Magré" version="1.0.1">
   <requires>
     <!-- <import addon="xbmc.python" version="2.25.0" /> -->
     <import addon="script.module.inputstreamhelper" version="0.5.2" />
     <import addon="script.common.plugin.cache" version="2.6.1"/>
   </requires>
   <extension library="addon.py" point="xbmc.python.pluginsource">
-    <provides>video</provides>
+<provides>audio video</provides>
   </extension>
   <extension point="xbmc.addon.metadata">
     <language>nl</language>
     <platform>all</platform>
-    <summary lang="nl">NPO Start - Bekijk gratis videos van NPO Start (Werkt alleen met nederlands ip-adres)</summary>
-    <description lang="nl">NPO Start, videos van NED1 / NED2 / NED3 (Werkt alleen met nederlands ip-adres, dus indien in buitenland VPN gebruiken.)</description>
+    <summary lang="en_GB">NPO Start - Bekijk gratis videos van NPO Start (Werkt alleen met nederlands ip-adres)</summary>
+    <description lang="en_GB">NPO Start, videos van NED1 / NED2 / NED3 (Werkt alleen met nederlands ip-adres, dus indien in buitenland VPN gebruiken.)</description>
 	<disclaimer lang="en_GB">Deze addon bevat geen illegale content en maakt op geen enkele wijze deel uit van Kodi zelf.</disclaimer>
      <license>GPL-2.0-only</license>
     <assets>

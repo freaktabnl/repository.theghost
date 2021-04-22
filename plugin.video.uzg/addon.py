@@ -19,12 +19,12 @@ from resources.lib.uzg import Uzg
 if (sys.version_info[0] == 3):
     # For Python 3.0 and later
     from urllib.parse import urlencode
-    from urllib.parse import parse_qsl
+    from urllib.parse import parse_qs
     import storageserverdummy as StorageServer
 else:
     # Fall back to Python 2's urllib2
     from urllib import urlencode
-    from urlparse import parse_qsl
+    from urlparse import parse_qs
     try:
         import StorageServer
     except:
@@ -66,7 +66,7 @@ def setMediaView():
 
 def home_menu():
     xbmcplugin.setPluginCategory(_handle, 'NPO Start')
-    for category in ['Live kanalen', 'Zoeken', 'Letters']:
+for category in ['Live TV', 'Live Radio', 'Zoeken', 'Letters']:
         list_item = xbmcgui.ListItem(label=category)
         url = get_url(action='keuze', keuze=category)
         is_folder = True
@@ -78,9 +78,12 @@ def list_keuze(keuze):
     xbmcplugin.setPluginCategory(_handle, keuze)
     xbmcplugin.setContent(_handle, 'videos')
 
-    if(keuze == 'Live kanalen'):
-        list_livestreams()
+if(keuze == 'Live TV'):
+        list_livestreams('tv')
 
+    elif(keuze == 'Live Radio'):
+        list_livestreams('radio')
+		
     elif (keuze == 'Zoeken'):
         dialog = xbmcgui.Dialog()
         franchises = list()
@@ -94,9 +97,9 @@ def list_keuze(keuze):
         list_overzicht()
 
 
-def list_livestreams():
+def list_livestreams(channel_type):
     videos = list()
-    videos = _cache.cacheFunction(uzg.getChannels)
+	videos = _cache.cacheFunction(uzg.getChannels, channel_type)
     if videos:
         add_video_items(videos)
 
@@ -208,8 +211,8 @@ def play_video(whatson_id):
 
 
 def router(paramstring):
-    params = dict(parse_qsl(paramstring))
-    if params:
+    params = dict(parse_qs(paramstring))
+    if 'action' in params:
         if params['action'] == 'letter':
             list_letter(params['letter'])
         elif params['action'] == 'keuze':
