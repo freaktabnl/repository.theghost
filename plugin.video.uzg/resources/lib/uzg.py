@@ -21,7 +21,7 @@ class Uzg:
 def getChannels(self, channel_type):
         url = 'https://start-api.npo.nl/channel'
         return Channels(url, channel_type).uzgitemlist
-		
+        
     def getQueryPage(self, tekst):
         # default is page 1
         return SerieItems('https://start-api.npo.nl/search?query=' + tekst.replace(' ', '%20')).uzgitemlist
