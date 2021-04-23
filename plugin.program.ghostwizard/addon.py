@@ -30,17 +30,17 @@ except:
 	pass
 
 def MainMenu():
-	addDir('Build Menu','',1,addon_icon,addon_fanart,local_string(30001),isFolder=True)
-	addDir('Maintenance','',5,addon_icon,addon_fanart,local_string(30002),isFolder=True)
-	addDir('Fresh Start','',4,addon_icon,addon_fanart,local_string(30003),isFolder=False)
-	addDir('Notification','',100,addon_icon,addon_fanart,'Bring up the notifications dialog',isFolder=False)
-	addDir('Settings','',9,addon_icon,addon_fanart,local_string(30001),isFolder=False)
+	addDir('Build menu','',1,addon_icon,addon_fanart,local_string(30001),isFolder=True)
+	addDir('Onderhoud','',5,addon_icon,addon_fanart,local_string(30002),isFolder=True)
+	addDir('Schone installatie','',4,addon_icon,addon_fanart,local_string(30003),isFolder=False)
+	addDir('Mededelingen','',100,addon_icon,addon_fanart,'Mededelingen bekijken',isFolder=False)
+	addDir('Instellingen','',9,addon_icon,addon_fanart,local_string(30001),isFolder=False)
 	xbmcplugin.endOfDirectory(int(sys.argv[1]))
 
 def subMenu_maintenance():
-	addDir('Clear Packages','',6,addon_icon,addon_fanart,local_string(30005),isFolder=False)
-	addDir('Clear Thumbnails','',7,addon_icon,addon_fanart,local_string(30008),isFolder=False)
-	addDir('Advanced Settings','',8,addon_icon,addon_fanart,local_string(30009),isFolder=False)
+	addDir('Packages verwijderen','',6,addon_icon,addon_fanart,local_string(30005),isFolder=False)
+	addDir('Thumbnails verwijderen','',7,addon_icon,addon_fanart,local_string(30008),isFolder=False)
+	addDir('Gevorderde instellingen','',8,addon_icon,addon_fanart,local_string(30009),isFolder=False)
 	xbmcplugin.endOfDirectory(int(sys.argv[1]))
 
 def BuildMenu():
@@ -55,7 +55,7 @@ def BuildMenu():
     		url = (build.get('url', ''))
     		icon = (build.get('icon', addon_icon))
     		fanart = (build.get('fanart', addon_fanart))
-    		description = (build.get('description', 'No Description Available.'))
+    		description = (build.get('description', 'Geen beschrijving beschikbaar.'))
     		if url.endswith('.zip'):
     			addDir(name + ' Version ' + version,url,3,icon,fanart,description,name2=name,version=version,isFolder=False)
     		elif url.endswith('.json'):
