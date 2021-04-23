@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-'''#####-----XBMC Library Modules-----#####'''
+#####-----XBMC Library Modules-----#####
 import xbmc, xbmcplugin, xbmcaddon, xbmcgui
 from xbmc import log
-'''#####-----External Modules-----#####'''
+#####-----External Modules-----#####
 import sys, os, shutil, json, base64
 import xml.etree.ElementTree as ET
 from urllib.parse import unquote_plus
@@ -10,13 +10,12 @@ from urllib.request import urlopen
 from urllib.request import Request
 from zipfile import ZipFile
 
-'''#####-----Internal Modules-----#####'''
+#####-----Internal Modules-----#####
 from addonvar import *
 from resources.lib.modules.utils import addDir
 from resources.lib.modules import skinSwitch
 
-addon.setSetting('firstrun', 'false')
-args = parse_qs(sys.argv[2][1:])
+setting_set('firstrun', 'false')
 KODIV  = float(xbmc.getInfoLabel("System.BuildVersion")[:4])
 
 def currSkin():
@@ -31,17 +30,17 @@ except:
 	pass
 
 def MainMenu():
-	addDir('Builds','',1,addon_icon,addon_fanart,local_string(30001),isFolder=True)
-	addDir('Onderhoud','',5,addon_icon,addon_fanart,local_string(30002),isFolder=True)
-	addDir('Schone start','',4,addon_icon,addon_fanart,local_string(30003),isFolder=False)
-	addDir('Mededelingen','',100,addon_icon,addon_fanart,'Mededelingen bekijken',isFolder=False)
-	addDir('Instellingen','',9,addon_icon,addon_fanart,local_string(30001),isFolder=False)
+	addDir('Build Menu','',1,addon_icon,addon_fanart,local_string(30001),isFolder=True)
+	addDir('Maintenance','',5,addon_icon,addon_fanart,local_string(30002),isFolder=True)
+	addDir('Fresh Start','',4,addon_icon,addon_fanart,local_string(30003),isFolder=False)
+	addDir('Notification','',100,addon_icon,addon_fanart,'Bring up the notifications dialog',isFolder=False)
+	addDir('Settings','',9,addon_icon,addon_fanart,local_string(30001),isFolder=False)
 	xbmcplugin.endOfDirectory(int(sys.argv[1]))
 
 def subMenu_maintenance():
-	addDir('Packages opschonen','',6,addon_icon,addon_fanart,local_string(30005),isFolder=False)
-	addDir('Thumbnails opschonen','',7,addon_icon,addon_fanart,local_string(30008),isFolder=False)
-	addDir('Geavanceerde instellingen','',8,addon_icon,addon_fanart,local_string(30009),isFolder=False)
+	addDir('Clear Packages','',6,addon_icon,addon_fanart,local_string(30005),isFolder=False)
+	addDir('Clear Thumbnails','',7,addon_icon,addon_fanart,local_string(30008),isFolder=False)
+	addDir('Advanced Settings','',8,addon_icon,addon_fanart,local_string(30009),isFolder=False)
 	xbmcplugin.endOfDirectory(int(sys.argv[1]))
 
 def BuildMenu():
@@ -56,7 +55,7 @@ def BuildMenu():
     		url = (build.get('url', ''))
     		icon = (build.get('icon', addon_icon))
     		fanart = (build.get('fanart', addon_fanart))
-    		description = (build.get('description', 'Geen beschrijving aanwezig.'))
+    		description = (build.get('description', 'No Description Available.'))
     		if url.endswith('.zip'):
     			addDir(name + ' Version ' + version,url,3,icon,fanart,description,name2=name,version=version,isFolder=False)
     		elif url.endswith('.json'):
@@ -117,14 +116,23 @@ def save_check():
 def save_move1():
 	if os.path.exists(os.path.join(user_path, addon_id)):
 		shutil.move(os.path.join(user_path, addon_id), os.path.join(packages, addon_id))
-	if os.path.exists(os.path.join(user_path,'favourites.xml')):
-		shutil.move(os.path.join(user_path, 'favourites.xml'), os.path.join(packages, 'favourites.xml'))
-	if os.path.exists(os.path.join(user_path,'sources.xml')):
-		shutil.move(os.path.join(user_path, 'sources.xml'), os.path.join(packages, 'sources.xml'))
-	if os.path.exists(os.path.join(data_path,'script.module.resolveurl')):
-		shutil.move(os.path.join(data_path, 'script.module.resolveurl'), os.path.join(packages, 'script.module.resolveurl'))
-	if os.path.exists(os.path.join(user_path,'advancedsettings.xml')):
-		shutil.move(os.path.join(user_path, 'advancedsettings.xml'), os.path.join(packages, 'advancedsettings.xml'))
+	
+	if setting('savefavs')=='true':
+		if os.path.exists(os.path.join(user_path,'favourites.xml')):
+			shutil.move(os.path.join(user_path, 'favourites.xml'), os.path.join(packages, 'favourites.xml'))
+	
+	if setting('savesources')=='true':
+		if os.path.exists(os.path.join(user_path,'sources.xml')):
+			shutil.move(os.path.join(user_path, 'sources.xml'), os.path.join(packages, 'sources.xml'))
+	
+	if setting('savedebrid')=='true':
+		if os.path.exists(os.path.join(data_path,'script.module.resolveurl')):
+			shutil.move(os.path.join(data_path, 'script.module.resolveurl'), os.path.join(packages, 'script.module.resolveurl'))
+	
+	if setting('saveadvanced')=='true':
+		if os.path.exists(os.path.join(user_path,'advancedsettings.xml')):
+			shutil.move(os.path.join(user_path, 'advancedsettings.xml'), os.path.join(packages, 'advancedsettings.xml'))
+
 
 def save_move2():
 	if os.path.exists(os.path.join(packages,addon_id)):
@@ -132,34 +140,39 @@ def save_move2():
 			os.remove(os.path.join(user_path, addon_id))
 		shutil.move(os.path.join(packages, addon_id), os.path.join(user_path, addon_id))
 	
-	if os.path.exists(os.path.join(packages,'favourites.xml')):
-		if os.path.exists(os.path.join(user_path, 'favourites.xml')):
-			os.remove(os.path.join(user_path, 'favourites.xml'))
-		shutil.move(os.path.join(packages, 'favourites.xml'), os.path.join(user_path, 'favourites.xml'))
-		
-	if os.path.exists(os.path.join(packages,'sources.xml')):
-		if os.path.exists(os.path.join(user_path, 'sources.xml')):
-			os.remove(os.path.join(user_path, 'sources.xml'))
-		shutil.move(os.path.join(packages, 'sources.xml'), os.path.join(user_path, 'sources.xml'))
+	if setting('savefavs')=='true':
+		if os.path.exists(os.path.join(packages,'favourites.xml')):
+			if os.path.exists(os.path.join(user_path, 'favourites.xml')):
+				os.remove(os.path.join(user_path, 'favourites.xml'))
+			shutil.move(os.path.join(packages, 'favourites.xml'), os.path.join(user_path, 'favourites.xml'))
 	
-	if os.path.exists(os.path.join(packages,'script.module.resolveurl')):
-		if os.path.exists(os.path.join(data_path, 'script.module.resolveurl')):
-			shutil.rmtree(os.path.join(data_path, 'script.module.resolveurl'))
-		shutil.move(os.path.join(packages, 'script.module.resolveurl'), os.path.join(data_path, 'script.module.resolveurl'))
+	if setting('savesources')=='true':
+		if os.path.exists(os.path.join(packages,'sources.xml')):
+			if os.path.exists(os.path.join(user_path, 'sources.xml')):
+				os.remove(os.path.join(user_path, 'sources.xml'))
+			shutil.move(os.path.join(packages, 'sources.xml'), os.path.join(user_path, 'sources.xml'))
+	
+	if setting('savedebrid')=='true':
+		if os.path.exists(os.path.join(packages,'script.module.resolveurl')):
+			if os.path.exists(os.path.join(data_path, 'script.module.resolveurl')):
+				shutil.rmtree(os.path.join(data_path, 'script.module.resolveurl'))
+			shutil.move(os.path.join(packages, 'script.module.resolveurl'), os.path.join(data_path, 'script.module.resolveurl'))
+	
+	if setting('saveadvanced')=='true':
+		if os.path.exists(os.path.join(packages,'advancedsettings.xml')):
+			if os.path.exists(os.path.join(user_path, 'advancedsettings.xml')):
+				os.remove(os.path.join(user_path, 'advancedsettings.xml'))
+			shutil.move(os.path.join(packages, 'advancedsettings.xml'), os.path.join(user_path, 'advancedsettings.xml'))
 	shutil.rmtree(packages)
-	
-	if os.path.exists(os.path.join(packages,'advancedsettings.xml')):
-		if os.path.exists(os.path.join(user_path, 'advancedsettings.xml')):
-			os.remove(os.path.join(user_path, 'advancedsettings.xml'))
-		shutil.move(os.path.join(packages, 'advancedsettings.xml'), os.path.join(user_path, 'advancedsettings.xml'))
-	
+
+
 def main(NAME, NAME2, VERSION, URL, ICON, FANART, DESCRIPTION):
 	
-	yesInstall = dialog.yesno(NAME, 'De wizard is klaar om uw build te installeren', nolabel='Stop', yeslabel='Ga door')
+	yesInstall = dialog.yesno(NAME, 'De wizard is klaar om uw build te installeren.', nolabel='Cancel', yeslabel='Continue')
 	if yesInstall:
 	    save_check()
 	    save_move1()
-	    yesFresh = dialog.yesno('Schone installatie', 'Alle data wordt nu eerst verwijderd', nolabel='Stop', yeslabel='Ga door')
+	    yesFresh = dialog.yesno('Schone installatie', 'Alle data wordt nu eerst verwijderd.', nolabel='No', yeslabel='Fresh Start')
 	    if yesFresh:
 	    	freshStart()
 	    	
@@ -168,7 +181,7 @@ def main(NAME, NAME2, VERSION, URL, ICON, FANART, DESCRIPTION):
 		return
 
 def freshStart():
-	yesFresh = dialog.yesno('Schone installatie', '(Herhaling) Alle data data wordt nu echt verwijderd. U kunt dit niet terugdraaien.', nolabel='Stop', yeslabel='Ga door')
+	yesFresh = dialog.yesno('Schone installatie', '(Herhaling) Alle data data wordt nu echt verwijderd. U kunt dit niet terugdraaien.', nolabel='No', yeslabel='Fresh Start')
 	if yesFresh:
 		
 		#Skin Switch
@@ -183,11 +196,11 @@ def freshStart():
 			if xbmc.getCondVisibility("Window.isVisible(yesnodialog)"):
 				xbmc.executebuiltin('SendClick(11)')
 			else: 
-				log('Fresh Install: Skin Swap mislukt', xbmc.LOGINFO)
+				log('Schone installatie: Skin Swap Timed Out!', xbmc.LOGINFO)
 				return False
 			xbmc.sleep(1000)
 		if not currSkin() in ['skin.estuary']:
-			log('Fresh Install: Skin Swap mislukt.', xbmc.LOGINFO)
+			log('Schone installatie: Skin Swap failed.', xbmc.LOGINFO)
 			return
 		
 		if mode==4:
@@ -205,7 +218,7 @@ def freshStart():
 					try:
 						os.remove(os.path.join(root, name))
 					except:
-						log('Verwijderen niet mogelijk ' + name, xbmc.LOGINFO)
+						log('Verwijderen niet mogelijk van ' + name, xbmc.LOGINFO)
 		dp.update(60, 'Verwijderd bestanden en mappen...')
 		xbmc.sleep(1000)	
 		for root, dirs, files in os.walk(xbmcPath,topdown=True):
@@ -215,12 +228,12 @@ def freshStart():
 					try:
 						shutil.rmtree(os.path.join(root,name),ignore_errors=True, onerror=None)
 					except:
-						log('Verwijderen niet mogelijk ' + name, xbmc.LOGINFO)
-		dp.update(60, 'Verwijderd bestanden en mappen...geduld')
+						log('Verwijderen niet mogelijk van ' + name, xbmc.LOGINFO)
+		dp.update(60, 'Verwijderd bestanden en mappen...')
 		xbmc.sleep(1000)
 		if not os.path.exists(packages):
 			os.mkdir(packages)
-		dp.update(100, 'Verwijderd bestanden en mappen...gereed')
+		dp.update(100, 'Verwijderd bestanden en mappen...Gereed')
 		xbmc.sleep(2000)
 		if mode == 4:
 			save_move2()
@@ -243,9 +256,9 @@ def buildInstall(NAME, NAME2, VERSION, URL):
 	if length:
 		length2 = int(int(length)/1000000)
 	else:
-		length2 = 'Onbekende grote'
-	dp.create(NAME + ' - ' + str(length2) + ' MB', 'Downloading uw build...geduld')
-	dp.update(0, 'Downloading uw build...geduld')
+		length2 = 'Onbekende grote van bestand'
+	dp.create(NAME + ' - ' + str(length2) + ' MB', 'Wij downloaden uw nieuwe build...geduld')
+	dp.update(0, 'Wij downloaden uw nieuwe build..')
 	#
 	if length:
 		blocksize = max(int(length)/512, 1000000)
@@ -258,22 +271,22 @@ def buildInstall(NAME, NAME2, VERSION, URL):
 			size2 = int(size/1000000)
 			percentage = int(int(size)/int(length)*100) 
 			tempzip.write(buf)
-			dp.update(percentage, 'Downloading uw build...geduld' + '\n' + str(size2) + '/' + str(length2) + 'MB')
+			dp.update(percentage, 'Wij downloaden uw nieuwe build..' + '\n' + str(size2) + '/' + str(length2) + 'MB')
 				
 	else:
-		dp.update(50, 'Downloading uw build...geduld')
+		dp.update(50, 'Wij downloaden uw nieuwe build')
 		tempzip.write(zipresp.read())
 	if length:
-		dp.update(100, 'Downloading uw build...Gereed!' + '\n' + str(size2) + '/' + str(length2) + 'MB')
+		dp.update(100, 'Wij downloaden uw nieuwe build...Gereed!' + '\n' + str(size2) + '/' + str(length2) + 'MB')
 	else:
-		dp.update(100, 'Downloading uw build...Gereed!')
+		dp.update(100, 'Wij downloaden uw nieuwe build...Gereed!')
 	xbmc.sleep(1000)      
 	tempzip.close()
 	dp.update(66, 'Bestanden uitpakken...geduld')
 	xbmc.sleep(1000)
 	zf = ZipFile(zippath)
 	zf.extractall(path = home)
-	dp.update(100, 'Bestanden uitpakken...Gereed!')
+	dp.update(100, 'Bestanden uitpakken...Gereed')
 	xbmc.sleep(2000)
 	zf.close()
 	os.unlink(zippath)

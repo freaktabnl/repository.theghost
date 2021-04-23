@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 import xbmc, xbmcvfs, xbmcplugin, xbmcaddon, xbmcgui
-import os, sys, glob, base64
+import os, base64
 from datetime import datetime
-from urllib.parse import parse_qs
 
 addon_id = xbmcaddon.Addon().getAddonInfo('id')
 
@@ -43,11 +42,15 @@ packages = os.path.join(addons_path, 'packages/')
 resources = os.path.join(addon_path, 'resources/')
 installed_date = str(datetime.now())[:-7]
 def isBase64(s):
-    if base64.b64encode(base64.b64decode(s)).decode('utf8') == s:
-    	return True
-    else:
-        return False
+    try:
+    	if base64.b64encode(base64.b64decode(s)).decode('utf8') == s:
+    		return True
+    	else:
+    		return False
+    except:
+    	return False
 advancedsettings_xml =  os.path.join(user_path, 'advancedsettings.xml')
 advancedsettings_folder = os.path.join(resources, 'advancedsettings/')
 user_agent = 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'
 headers = {'User-Agent': user_agent}
+current_build = setting('buildname')
