@@ -168,11 +168,11 @@ def save_move2():
 
 def main(NAME, NAME2, VERSION, URL, ICON, FANART, DESCRIPTION):
 	
-	yesInstall = dialog.yesno(NAME, 'De wizard is klaar om uw build te installeren.', nolabel='Cancel', yeslabel='Continue')
+	yesInstall = dialog.yesno(NAME, 'De wizard is klaar om uw build te installeren.', nolabel='Stop', yeslabel='Ga door')
 	if yesInstall:
 	    save_check()
 	    save_move1()
-	    yesFresh = dialog.yesno('Schone installatie', 'Alle data wordt nu eerst verwijderd.', nolabel='No', yeslabel='Fresh Start')
+	    yesFresh = dialog.yesno('Schone installatie', 'Alle data wordt nu eerst verwijderd.', nolabel='Nee stop', yeslabel='Ja, ga door')
 	    if yesFresh:
 	    	freshStart()
 	    	
@@ -181,7 +181,7 @@ def main(NAME, NAME2, VERSION, URL, ICON, FANART, DESCRIPTION):
 		return
 
 def freshStart():
-	yesFresh = dialog.yesno('Schone installatie', '(Herhaling) Alle data data wordt nu echt verwijderd. U kunt dit niet terugdraaien.', nolabel='No', yeslabel='Fresh Start')
+	yesFresh = dialog.yesno('Schone installatie', '(Herhaling) Alle data data wordt nu echt verwijderd. U kunt dit niet terugdraaien.', nolabel='Nee stop', yeslabel='Ja, ga door')
 	if yesFresh:
 		
 		#Skin Switch
@@ -238,9 +238,9 @@ def freshStart():
 		if mode == 4:
 			save_move2()
 			addon.setSetting('firstrun', 'true')
-			addon.setSetting('buildname', 'Geen build geinstalleerd')
+			addon.setSetting('buildname', 'Geen Ghost build op uw systeem')
 			addon.setSetting('buildversion', '0')
-			dialog.ok(addon_name, 'Schone installatie gereed. Klik nu op OK om Kodi af te sluiten.')
+			dialog.ok(addon_name, 'Alles staat gereed. Klik nu op OK om Kodi af te sluiten en vervolgens weer op te starten.')
 			os._exit(1)
 	else:
 		return
@@ -257,7 +257,7 @@ def buildInstall(NAME, NAME2, VERSION, URL):
 		length2 = int(int(length)/1000000)
 	else:
 		length2 = 'Onbekende grote van bestand'
-	dp.create(NAME + ' - ' + str(length2) + ' MB', 'Wij downloaden uw nieuwe build...geduld')
+	dp.create(NAME + ' - ' + str(length2) + ' MB', 'Wij downloaden uw nieuwe of bijgewerkte build...geduld aub')
 	dp.update(0, 'Wij downloaden uw nieuwe build..')
 	#
 	if length:
@@ -294,7 +294,7 @@ def buildInstall(NAME, NAME2, VERSION, URL):
 	addon.setSetting('buildname', NAME2)
 	addon.setSetting('buildversion', VERSION)
 	addon.setSetting('firstrun', 'true')
-	dialog.ok(addon_name, 'Installatie gereed. Klik nu op OK om Kodi af te sluiten.')
+	dialog.ok(addon_name, 'Installatie gereed. Klik nu op OK om Kodi af te sluiten en vervolgens weer opstarten.')
 	os._exit(1)
 
 def clear_packages():
