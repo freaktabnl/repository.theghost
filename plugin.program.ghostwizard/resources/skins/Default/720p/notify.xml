@@ -31,7 +31,7 @@
 			<left>13</left>
 			<width>388</width>
 			<height>100</height>
-			<label>The Ghost</label> 			
+			<label>The Ghost</label> 			#Add your team name here
 			<font>font60</font>
 			<align>center</align>
 			<aligny>center</aligny>
@@ -44,7 +44,7 @@
 			<description>Icon</description>
 			<width>405</width>
 			<height>395</height>
-			<texture>test.png</texture> 			
+			<texture>icon.png</texture> 			#Add you icon here
 			<bordersize>5</bordersize>
 		</control>
 		<control type="button" id="302">
@@ -86,7 +86,7 @@
 			<pagecontrol>301</pagecontrol>
 		</control>
 		<control type="scrollbar" id="301">
-      <description>Scroll bar control</description>
+      <description>My first scroll bar control</description>
       <left>1080</left>
       <top>10</top>
       <width>10</width>

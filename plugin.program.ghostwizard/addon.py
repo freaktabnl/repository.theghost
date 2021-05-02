@@ -1,415 +1,61 @@
-# -*- coding: utf-8 -*-
-#####-----XBMC Library Modules-----#####
-import xbmc, xbmcplugin, xbmcaddon, xbmcgui
-from xbmc import log
-#####-----External Modules-----#####
-import sys, os, shutil, json, base64
-import xml.etree.ElementTree as ET
-from urllib.parse import unquote_plus
-from urllib.request import urlopen
-from urllib.request import Request
-from zipfile import ZipFile
+import xbmc, xbmcplugin
+import sys
+import addonvar
+from resources.lib.modules.params import p
 
-#####-----Internal Modules-----#####
-from addonvar import *
-from resources.lib.modules.utils import addDir
-from resources.lib.modules import skinSwitch
+xbmc.log(str(p.get_params()),xbmc.LOGDEBUG)
 
-setting_set('firstrun', 'false')
-KODIV  = float(xbmc.getInfoLabel("System.BuildVersion")[:4])
+name = p.get_name()
+name2 = p.get_name2()
+version = p.get_version()
+url = p.get_url()
+mode = p.get_mode()
+iconimage = p.get_iconimage()
+fanart = p.get_fanart()
+description = p.get_description()
 
-def currSkin():
-	return xbmc.getSkinDir()
-def percentage(part, whole):
-	return 100 * float(part)/float(whole)
-
-try:
-	if isBase64(buildfile):
-		buildfile = base64.b64decode(buildfile).decode('utf8')
-except:
-	pass
-
-def MainMenu():
-	addDir('Build menu','',1,addon_icon,addon_fanart,local_string(30001),isFolder=True)
-	addDir('Onderhoud','',5,addon_icon,addon_fanart,local_string(30002),isFolder=True)
-	addDir('Schone installatie','',4,addon_icon,addon_fanart,local_string(30003),isFolder=False)
-	addDir('Mededelingen','',100,addon_icon,addon_fanart,'Mededelingen bekijken',isFolder=False)
-	addDir('Instellingen','',9,addon_icon,addon_fanart,local_string(30001),isFolder=False)
-	xbmcplugin.endOfDirectory(int(sys.argv[1]))
-
-def subMenu_maintenance():
-	addDir('Packages verwijderen','',6,addon_icon,addon_fanart,local_string(30005),isFolder=False)
-	addDir('Thumbnails verwijderen','',7,addon_icon,addon_fanart,local_string(30008),isFolder=False)
-	addDir('Gevorderde instellingen','',8,addon_icon,addon_fanart,local_string(30009),isFolder=False)
-	xbmcplugin.endOfDirectory(int(sys.argv[1]))
-
-def BuildMenu():
-    req = Request(buildfile, headers = headers)
-    response = urlopen(req).read()
-    try:
-    	builds = json.loads(response)['builds']
-    	for build in builds:
-    		
-    		name = (build.get('name', ''))
-    		version = (build.get('version', '0'))
-    		url = (build.get('url', ''))
-    		icon = (build.get('icon', addon_icon))
-    		fanart = (build.get('fanart', addon_fanart))
-    		description = (build.get('description', 'Geen beschrijving beschikbaar.'))
-    		if url.endswith('.zip'):
-    			addDir(name + ' Version ' + version,url,3,icon,fanart,description,name2=name,version=version,isFolder=False)
-    		elif url.endswith('.json'):
-    			addDir(name + ' Version ' + version,url,1,icon,fanart,description,name2=name,version=version,isFolder=True)
-    		else:
-    			addDir('Ongeldige build URL. Contact de ontwikkelaar.','','','','','',isFolder=False)
-    		
-    except:
-    	builds = ET.fromstring(response)
-    	for build in builds.findall('build'):
-    		try:
-    			name = build.find('name').text
-    		except AttributeError:
-    			name = build.get('name')
-    		except:
-    			name = ''
-    		
-    		try:
-    			version = build.find('version').text
-    		except:
-    			version = 0
-    		try:
-    			url = build.find('url').text
-    		except:
-    			url = ''
-    		try:
-    			icon = build.find('icon').text
-    		except:
-    			icon = addon_icon
-    		try:
-    			fanart = build.find('fanart').text
-    		except:
-    			fanart = addon_fanart
-    		try:
-    			description = build.find('description').text
-    		except:
-    			description = 'Geen beschrijving aanwezig'
-    		if url.endswith('.zip'):
-    			addDir(name + ' Version ' + version,url,3,icon,fanart,description,name2=name,version=version,isFolder=False)
-    			
-    		elif url.endswith('.xml'):
-    			addDir(name + ' Version ' + version,url,1,icon,fanart,description,name2=name,version=version,isFolder=True)
-    		else:
-    			addDir('Ongeldige build URL. Contact de ontwikkelaar.','','','','','',isFolder=False)
-    xbmcplugin.endOfDirectory(int(sys.argv[1]))
-
-def save_check():
-	if setting('savefavs')=='true':
-		EXCLUDES.append('favourites.xml')
-	if setting('savesources')=='true':
-		EXCLUDES.append('sources.xml')
-	if setting('savedebrid')=='true':
-		EXCLUDES.append('script.module.resolveurl')
-	if setting('saveadvanced')=='true':
-		EXCLUDES.append('advancedsettings.xml')
-	return EXCLUDES
-
-def save_move1():
-	if os.path.exists(os.path.join(user_path, addon_id)):
-		shutil.move(os.path.join(user_path, addon_id), os.path.join(packages, addon_id))
-	
-	if setting('savefavs')=='true':
-		if os.path.exists(os.path.join(user_path,'favourites.xml')):
-			shutil.move(os.path.join(user_path, 'favourites.xml'), os.path.join(packages, 'favourites.xml'))
-	
-	if setting('savesources')=='true':
-		if os.path.exists(os.path.join(user_path,'sources.xml')):
-			shutil.move(os.path.join(user_path, 'sources.xml'), os.path.join(packages, 'sources.xml'))
-	
-	if setting('savedebrid')=='true':
-		if os.path.exists(os.path.join(data_path,'script.module.resolveurl')):
-			shutil.move(os.path.join(data_path, 'script.module.resolveurl'), os.path.join(packages, 'script.module.resolveurl'))
-	
-	if setting('saveadvanced')=='true':
-		if os.path.exists(os.path.join(user_path,'advancedsettings.xml')):
-			shutil.move(os.path.join(user_path, 'advancedsettings.xml'), os.path.join(packages, 'advancedsettings.xml'))
-
-
-def save_move2():
-	if os.path.exists(os.path.join(packages,addon_id)):
-		if os.path.exists(os.path.join(user_path, addon_id)):
-			os.remove(os.path.join(user_path, addon_id))
-		shutil.move(os.path.join(packages, addon_id), os.path.join(user_path, addon_id))
-	
-	if setting('savefavs')=='true':
-		if os.path.exists(os.path.join(packages,'favourites.xml')):
-			if os.path.exists(os.path.join(user_path, 'favourites.xml')):
-				os.remove(os.path.join(user_path, 'favourites.xml'))
-			shutil.move(os.path.join(packages, 'favourites.xml'), os.path.join(user_path, 'favourites.xml'))
-	
-	if setting('savesources')=='true':
-		if os.path.exists(os.path.join(packages,'sources.xml')):
-			if os.path.exists(os.path.join(user_path, 'sources.xml')):
-				os.remove(os.path.join(user_path, 'sources.xml'))
-			shutil.move(os.path.join(packages, 'sources.xml'), os.path.join(user_path, 'sources.xml'))
-	
-	if setting('savedebrid')=='true':
-		if os.path.exists(os.path.join(packages,'script.module.resolveurl')):
-			if os.path.exists(os.path.join(data_path, 'script.module.resolveurl')):
-				shutil.rmtree(os.path.join(data_path, 'script.module.resolveurl'))
-			shutil.move(os.path.join(packages, 'script.module.resolveurl'), os.path.join(data_path, 'script.module.resolveurl'))
-	
-	if setting('saveadvanced')=='true':
-		if os.path.exists(os.path.join(packages,'advancedsettings.xml')):
-			if os.path.exists(os.path.join(user_path, 'advancedsettings.xml')):
-				os.remove(os.path.join(user_path, 'advancedsettings.xml'))
-			shutil.move(os.path.join(packages, 'advancedsettings.xml'), os.path.join(user_path, 'advancedsettings.xml'))
-	shutil.rmtree(packages)
-
-
-def main(NAME, NAME2, VERSION, URL, ICON, FANART, DESCRIPTION):
-	
-	yesInstall = dialog.yesno(NAME, 'De wizard is klaar om uw build te installeren.', nolabel='Stop', yeslabel='Ga door')
-	if yesInstall:
-	    save_check()
-	    save_move1()
-	    yesFresh = dialog.yesno('Schone installatie', 'Alle data wordt nu eerst verwijderd.', nolabel='Nee stop', yeslabel='Ja, ga door')
-	    if yesFresh:
-	    	freshStart()
-	    	
-	    buildInstall(NAME, NAME2, VERSION, URL)
-	else:
-		return
-
-def freshStart():
-	yesFresh = dialog.yesno('Schone installatie', '(Herhaling) Alle data data wordt nu echt verwijderd. U kunt dit niet terugdraaien.', nolabel='Nee stop', yeslabel='Ja, ga door')
-	if yesFresh:
-		
-		#Skin Switch
-		if not currSkin() in ['skin.estuary']:
-			skinSwitch.swapSkins('skin.estuary')
-			x = 0
-			xbmc.sleep(1000)
-			while not xbmc.getCondVisibility("Window.isVisible(yesnodialog)") and x < 150:
-				x += 1
-				xbmc.sleep(200)
-				xbmc.executebuiltin('SendAction(Select)')
-			if xbmc.getCondVisibility("Window.isVisible(yesnodialog)"):
-				xbmc.executebuiltin('SendClick(11)')
-			else: 
-				log('Schone installatie: Skin Swap Timed Out!', xbmc.LOGINFO)
-				return False
-			xbmc.sleep(1000)
-		if not currSkin() in ['skin.estuary']:
-			log('Schone installatie: Skin Swap failed.', xbmc.LOGINFO)
-			return
-		
-		if mode==4:
-			save_check()
-			save_move1()
-			
-		dp.create(addon_name, 'Verwijderd bestanden en mappen...geduld')
-		xbmc.sleep(1000)
-		dp.update(30, 'Verwijderd bestanden en mappen...geduld')
-		xbmc.sleep(1000)
-		for root, dirs, files in os.walk(xbmcPath, topdown=True):
-			dirs[:] = [d for d in dirs if d not in EXCLUDES]
-			for name in files:
-				if name not in EXCLUDES:
-					try:
-						os.remove(os.path.join(root, name))
-					except:
-						log('Verwijderen niet mogelijk van ' + name, xbmc.LOGINFO)
-		dp.update(60, 'Verwijderd bestanden en mappen...')
-		xbmc.sleep(1000)	
-		for root, dirs, files in os.walk(xbmcPath,topdown=True):
-			dirs[:] = [d for d in dirs if d not in EXCLUDES]
-			for name in dirs:
-				if name not in ["Database","userdata","temp","addons","packages","addon_data"]:
-					try:
-						shutil.rmtree(os.path.join(root,name),ignore_errors=True, onerror=None)
-					except:
-						log('Verwijderen niet mogelijk van ' + name, xbmc.LOGINFO)
-		dp.update(60, 'Verwijderd bestanden en mappen...')
-		xbmc.sleep(1000)
-		if not os.path.exists(packages):
-			os.mkdir(packages)
-		dp.update(100, 'Verwijderd bestanden en mappen...Gereed')
-		xbmc.sleep(2000)
-		if mode == 4:
-			save_move2()
-			addon.setSetting('firstrun', 'true')
-			addon.setSetting('buildname', 'Geen Ghost build op uw systeem')
-			addon.setSetting('buildversion', '0')
-			dialog.ok(addon_name, 'Alles staat gereed. Klik nu op OK om Kodi af te sluiten en vervolgens weer op te starten.')
-			os._exit(1)
-	else:
-		return
-
-def buildInstall(NAME, NAME2, VERSION, URL):
-	zippath = os.path.join(packages + "tempfile.zip")
-	if os.path.exists(zippath):
-		os.unlink(zippath)
-	tempzip = open(zippath, 'wb')
-	response = Request(URL, headers = headers)
-	zipresp = urlopen(response)
-	length = zipresp.getheader('content-length')
-	if length:
-		length2 = int(int(length)/1000000)
-	else:
-		length2 = 'Onbekende grote van bestand'
-	dp.create(NAME + ' - ' + str(length2) + ' MB', 'Wij downloaden uw nieuwe of bijgewerkte build...geduld aub')
-	dp.update(0, 'Wij downloaden uw nieuwe build..')
-	#
-	if length:
-		blocksize = max(int(length)/512, 1000000)
-		size = 0
-		while True:
-			buf = zipresp.read(blocksize)
-			if not buf:
-				break
-			size += len(buf)
-			size2 = int(size/1000000)
-			percentage = int(int(size)/int(length)*100) 
-			tempzip.write(buf)
-			dp.update(percentage, 'Wij downloaden uw nieuwe build..' + '\n' + str(size2) + '/' + str(length2) + 'MB')
-				
-	else:
-		dp.update(50, 'Wij downloaden uw nieuwe build')
-		tempzip.write(zipresp.read())
-	if length:
-		dp.update(100, 'Wij downloaden uw nieuwe build...Gereed!' + '\n' + str(size2) + '/' + str(length2) + 'MB')
-	else:
-		dp.update(100, 'Wij downloaden uw nieuwe build...Gereed!')
-	xbmc.sleep(1000)      
-	tempzip.close()
-	dp.update(66, 'Bestanden uitpakken...geduld')
-	xbmc.sleep(1000)
-	zf = ZipFile(zippath)
-	zf.extractall(path = home)
-	dp.update(100, 'Bestanden uitpakken...Gereed')
-	xbmc.sleep(2000)
-	zf.close()
-	os.unlink(zippath)
-	save_move2()
-	addon.setSetting('buildname', NAME2)
-	addon.setSetting('buildversion', VERSION)
-	addon.setSetting('firstrun', 'true')
-	dialog.ok(addon_name, 'Installatie gereed. Klik nu op OK om Kodi af te sluiten en vervolgens weer opstarten.')
-	os._exit(1)
-
-def clear_packages():
-    file_count = len([name for name in os.listdir(packages)])
-    for filename in os.listdir(packages):
-    	file_path = os.path.join(packages, filename)
-    	try:
-    	       if os.path.isfile(file_path) or os.path.islink(file_path):
-    	       	os.unlink(file_path)
-    	       elif os.path.isdir(file_path):
-    	       	shutil.rmtree(file_path)
-    	except Exception as e:
-    		log('Niet gelukt om te verwijderen %s. Reden: %s' % (file_path, e), xbmc.LOGINFO)
-    xbmcgui.Dialog().ok(addon_name, str(file_count)+' packages cleared.' )
-	
-def GetParams():
-	param=[]
-	paramstring=sys.argv[2]
-	if len(paramstring)>=2:
-		params=sys.argv[2]
-		cleanedparams=params.replace('?','')
-		if (params[len(params)-1]=='/'):
-			params=params[0:len(params)-2]
-		pairsofparams=cleanedparams.split('&')
-		param={}
-		for i in range(len(pairsofparams)):
-			splitparams={}
-			splitparams=pairsofparams[i].split('=')
-			if (len(splitparams))==2:
-				param[splitparams[0]]=splitparams[1]
-	return param
-
-params=GetParams()
-url=None
-name=None
-name2=None
-version=None
-mode=None
-iconimage=None
-fanart=None
-description=None
-log(str(params),xbmc.LOGDEBUG)
-
-try:
-	url=unquote_plus(params["url"])
-except:
-	pass
-try:
-	name=unquote_plus(params["name"])
-except:
-	pass
-try:
-	iconimage=unquote_plus(params["iconimage"])
-except:
-	pass
-try:        
-	mode=int(params["mode"])
-except:
-	pass
-try:        
-	fanart=unquote_plus(params["fanart"])
-except:
-	pass
-try:
-    description=unquote_plus(params["description"])
-except:
-	pass
-try:
-	name2 =unquote_plus(params["name2"])
-except:
-	pass
-try:
-	version =unquote_plus(params["version"])
-except:
-	pass
-
-'''
-modes for support script 
-'''
 xbmc.executebuiltin('Dialog.Close(busydialog)')
 
 if mode==None:
-	MainMenu()
+	from resources.lib.modules.menus import main_menu
+	main_menu()
 	
 elif mode==1:
-	BuildMenu()
+	from resources.lib.modules.menus import build_menu
+	build_menu()
 
 elif mode==3:
+	from resources.lib.modules.buildinstall import main
 	main(name, name2, version, url, iconimage, fanart, description)
 
 elif mode==4:
-	freshStart()
+	from resources.lib.modules.maintenance import fresh_start
+	fresh_start()
 
 elif mode==5:
-	subMenu_maintenance()
+	from resources.lib.modules.menus import submenu_maintenance
+	submenu_maintenance()
 	
 elif mode==6:
-	from resources.lib.modules import maintenance
-	maintenance.clear_packages()
+	from resources.lib.modules.maintenance import clear_packages
+	clear_packages()
 	
 elif mode==7:
-	from resources.lib.modules import maintenance
-	maintenance.clear_thumbnails()
+	from resources.lib.modules.maintenance import clear_thumbnails
+	clear_thumbnails()
 
 elif mode==8:
-	from resources.lib.modules import maintenance
-	maintenance.advanced_settings()
+	from resources.lib.modules.maintenance import advanced_settings
+	advanced_settings()
 	
 elif mode==9:
-	xbmcaddon.Addon(addon_id).openSettings()
+	from xbmcaddon import Addon
+	Addon(addonvar.addon_id).openSettings()
 
 elif mode==100:
 	from resources.lib.GUIcontrol import notify
 	d=notify.notify()
 	d.doModal()
 	del d
-	
+
 xbmcplugin.endOfDirectory(int(sys.argv[1]))

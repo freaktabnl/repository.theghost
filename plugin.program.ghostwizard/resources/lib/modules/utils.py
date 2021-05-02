@@ -23,6 +23,32 @@ def addDir(name,url,mode,iconimage,fanart,description, name2='', version='', add
 		liz.addContextMenuItems(contextMenu)
 	ok=xbmcplugin.addDirectoryItem(handle=int(sys.argv[1]),url=u,listitem=liz,isFolder=isFolder)
 
+def GetParams():
+	param=[]
+	paramstring=sys.argv[2]
+	if len(paramstring)>=2:
+		params=sys.argv[2]
+		cleanedparams=params.replace('?','')
+		if (params[len(params)-1]=='/'):
+			params=params[0:len(params)-2]
+		pairsofparams=cleanedparams.split('&')
+		param={}
+		for i in range(len(pairsofparams)):
+			splitparams={}
+			splitparams=pairsofparams[i].split('=')
+			if (len(splitparams))==2:
+				param[splitparams[0]]=splitparams[1]
+	return param
+
+def get_mode():
+	params=GetParams()
+	mode = None
+	try:
+		mode=int(params["mode"])
+	except:
+		pass
+	return mode
+
 def Log(msg,msgtype):
 	logit =False
 	if msgtype =='debug' and setting_true('logging.debug'):

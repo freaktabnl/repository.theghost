@@ -17,7 +17,7 @@
 #  http://www.gnu.org/copyleft/gpl.html                                        #
 ################################################################################
 
-import os, re, shutil, time, xbmc, xbmcaddon
+import os, xbmc, xbmcaddon
 try:
 	import json as simplejson 
 except:
@@ -72,10 +72,10 @@ def swapUS():
 	value = 'true'
 	query = '{"jsonrpc":"2.0", "method":"Settings.GetSettingValue","params":{"setting":%s}, "id":1}' % (new)
 	response = xbmc.executeJSONRPC(query)
-	Log("get settings: %s" % str(response), xbmc.LOGDEBUG)
+	xbmc.log("get settings: %s" % str(response), xbmc.LOGDEBUG)
 	if 'false' in response:
 		query = '{"jsonrpc":"2.0", "method":"Settings.SetSettingValue","params":{"setting":%s,"value":%s}, "id":1}' % (new, value)
 		response = xbmc.executeJSONRPC(query)
 		xbmc.executebuiltin('SendClick(11)')
-		Log("set settings: %s" % str(response), xbmc.LOGDEBUG)
+		xbmc.log("set settings: %s" % str(response), xbmc.LOGDEBUG)
 	return False

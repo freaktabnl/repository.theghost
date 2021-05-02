@@ -48,7 +48,7 @@ class startup:
     	
 	def save_menu(self):
 		save_items = []
-		choices = ["Favourites", "Sources", "Debrid - Resolve URL", "Advanced Settings"]
+		choices = ["Favorieten", "bronnen", "Debrid - Resolve URL", "Advanced bestand"]
 		save_select = dialog.multiselect(addon_name + " - Selecteer wat er bewaard dient te worden tijdens nieuwe installatie.",choices, preselect=[])
 		if save_select == None:
 			return
@@ -105,3 +105,4 @@ class startup:
 			addonsEnable.enable_addons()
 			xbmc.executebuiltin('UpdateLocalAddons')
 			xbmc.executebuiltin('UpdateAddonRepos')
+		setting_set('firstrun', 'false')

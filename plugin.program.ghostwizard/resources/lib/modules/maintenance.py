@@ -1,7 +1,22 @@
 import os, shutil, sqlite3
 import xbmc, xbmcgui
 from xbmc import log
-from addonvar import *
+import addonvar
+from addonvar import currSkin
+from .skinSwitch import swapSkins
+from .save_data import save_check, save_backup, save_restore
+user_path = addonvar.user_path
+db_path = addonvar.db_path
+addon_name = addonvar.addon_name
+textures_db = addonvar.textures_db
+advancedsettings_folder = addonvar.advancedsettings_folder
+advancedsettings_xml = addonvar.advancedsettings_xml
+dialog = addonvar.dialog
+dp = addonvar.dp
+xbmcPath = addonvar.xbmcPath
+EXCLUDES = addonvar.EXCLUDES
+packages = addonvar.packages
+setting_set = addonvar.setting_set
 
 def purge_db(db):
 	if os.path.exists(db):
@@ -28,21 +43,6 @@ def purge_db(db):
 	conn.close()
 	log('%s DB Purging Complete.' % db, xbmc.LOGINFO)
 
-def clear_packages():
-    file_count = len([name for name in os.listdir(packages)])
-    for filename in os.listdir(packages):
-    	file_path = os.path.join(packages, filename)
-    	try:
-    	       if os.path.isfile(file_path) or os.path.islink(file_path):
-    	       	os.unlink(file_path)
-    	       elif os.path.isdir(file_path):
-    	       	shutil.rmtree(file_path)
-    	except Exception as e:
-    		log('Failed to delete %s. Reason: %s' % (file_path, e), xbmc.LOGINFO)
-    xbmc.sleep(1000)
-    xbmcgui.Dialog().ok(addon_name, str(file_count)+' packages verwijderd.' )
-    return
-
 def clear_thumbnails():
 	try:
 		if os.path.exists(os.path.join(user_path, 'Thumbnails')):
@@ -56,7 +56,7 @@ def clear_thumbnails():
 	except:
 		purge_db(textures_db)
 	xbmc.sleep(1000)
-	xbmcgui.Dialog().ok(addon_name, 'Thumbnails zijn verwijderd. Start Kodi opnieuw op om Thumbnails weer aan te maken.')
+	xbmcgui.Dialog().ok(addon_name, 'Thumbnails zijn verwijderd. Reboot Kodi om deze opnieuw op te bouwen.')
 	return
 
 def advanced_settings():
@@ -75,7 +75,7 @@ def advanced_settings():
 		if os.path.exists(advancedsettings_xml):
 			os.unlink(advancedsettings_xml)
 		xbmc.sleep(1000)
-		deleted = xbmcgui.Dialog().ok(addon_name, 'Advanced instellingen zijn verwijderd. Kodi sluit nu af om instellingen door te voeren.')
+		dialog.ok(addon_name, 'Advanced instellingen zijn verwijderd. Kodi sluit nu af om instellingen door te voeren.')
 		os._exit(1)
 	else:
 		return
@@ -83,5 +83,84 @@ def advanced_settings():
 		os.unlink(advancedsettings_xml)
 	shutil.copyfile(xml, advancedsettings_xml)
 	xbmc.sleep(1000)
-	apply = xbmcgui.Dialog().ok(addon_name, 'Advanced instellingen zijn doorgevoerd. Kodi sluit nu af om instellingen door te voeren.')
+	dialog.ok(addon_name, 'Advanced instellingen zijn ingesteld. Kodi sluit nu af om instellingen door te voeren.')
 	os._exit(1)
+
+def fresh_start():
+	yesFresh = dialog.yesno('Frisse start', 'Alle data verwijderen?  Deze actie is niet meer terug te draaien.', nolabel='Stop', yeslabel='Ga door')
+	if yesFresh:
+		
+		#Skin Switch
+		if not currSkin() in ['skin.estuary']:
+			swapSkins('skin.estuary')
+			x = 0
+			xbmc.sleep(1000)
+			while not xbmc.getCondVisibility("Window.isVisible(yesnodialog)") and x < 150:
+				x += 1
+				xbmc.sleep(200)
+				xbmc.executebuiltin('SendAction(Select)')
+			if xbmc.getCondVisibility("Window.isVisible(yesnodialog)"):
+				xbmc.executebuiltin('SendClick(11)')
+			else: 
+				log('Fresh Install: Skin Swap Timed Out!', xbmc.LOGINFO)
+				return False
+			xbmc.sleep(1000)
+		if not currSkin() in ['skin.estuary']:
+			log('Fresh Install: Skin Swap failed.', xbmc.LOGINFO)
+			return
+		from .params import p
+		mode = p.get_mode()
+		if mode==4:
+			save_check()
+			save_backup()
+			
+		dp.create(addon_name, 'Verwijderd bestanden en mappen...')
+		xbmc.sleep(1000)
+		dp.update(30, 'Verwijderd bestanden en mappen...')
+		xbmc.sleep(1000)
+		for root, dirs, files in os.walk(xbmcPath, topdown=True):
+			dirs[:] = [d for d in dirs if d not in EXCLUDES]
+			for name in files:
+				if name not in EXCLUDES:
+					try:
+						os.remove(os.path.join(root, name))
+					except:
+						log('Niet mogelijk om te verwijderen ' + name, xbmc.LOGINFO)
+		dp.update(60, 'Verwijderd bestanden en mappen...')
+		xbmc.sleep(1000)	
+		for root, dirs, files in os.walk(xbmcPath,topdown=True):
+			dirs[:] = [d for d in dirs if d not in EXCLUDES]
+			for name in dirs:
+				if name not in ["Database","userdata","temp","addons","packages","addon_data"]:
+					try:
+						shutil.rmtree(os.path.join(root,name),ignore_errors=True, onerror=None)
+					except:
+						log('Niet mogelijk om te verwijderen ' + name, xbmc.LOGINFO)
+		dp.update(60, 'Verwijderd bestanden en mappen...')
+		xbmc.sleep(1000)
+		if not os.path.exists(packages):
+			os.mkdir(packages)
+		dp.update(100, 'Verwijderd bestanden en mappen...Gereed')
+		xbmc.sleep(2000)
+		if mode == 4:
+			save_restore()
+			setting_set('firstrun', 'true')
+			setting_set('buildname', 'Geen build op systeem')
+			setting_set('buildversion', '0')
+			dialog.ok(addon_name, 'frisse start gereede. Klik op OK om Kodi af te sluiten.')
+			os._exit(1)
+	else:
+		return
+
+def clear_packages():
+    file_count = len([name for name in os.listdir(packages)])
+    for filename in os.listdir(packages):
+    	file_path = os.path.join(packages, filename)
+    	try:
+    	       if os.path.isfile(file_path) or os.path.islink(file_path):
+    	       	os.unlink(file_path)
+    	       elif os.path.isdir(file_path):
+    	       	shutil.rmtree(file_path)
+    	except Exception as e:
+    		log('Niet mogelijk om te verwijderen %s. Reden: %s' % (file_path, e), xbmc.LOGINFO)
+    xbmcgui.Dialog().ok(addon_name, str(file_count)+' packages cleared.' )
