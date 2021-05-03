@@ -3,7 +3,7 @@ from .tools import save_check, save_move1
 
 def main(NAME, NAME2, VERSION, URL, ICON, FANART, DESCRIPTION):
 	
-	yesInstall = dialog.yesno(NAME, 'Onze wizard is klaar om uw build te installeren.', nolabel='Annuleer', yeslabel='Ga door')
+	yesInstall = dialog.yesno(NAME, 'Onze wizard is klaar om uw build te installeren.', nolabel='Stop', yeslabel='Ga door')
 	if yesInstall:
 	    save_check()
 	    save_move1()

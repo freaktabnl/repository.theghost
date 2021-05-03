@@ -48,7 +48,7 @@ class startup:
     	
 	def save_menu(self):
 		save_items = []
-		choices = ["Favorieten", "bronnen", "Debrid - Resolve URL", "Advanced bestand"]
+		choices = ["Favorieten", "Bronnen", "Debrid - Resolve URL", "Advanced bestand"]
 		save_select = dialog.multiselect(addon_name + " - Selecteer wat er bewaard dient te worden tijdens nieuwe installatie.",choices, preselect=[])
 		if save_select == None:
 			return

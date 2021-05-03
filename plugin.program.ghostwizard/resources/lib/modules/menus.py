@@ -10,7 +10,7 @@ buildfile = addonvar.buildfile
 headers = addonvar.headers
 
 def main_menu():
-	addDir('Onze builds','',1,addon_icon,addon_fanart,local_string(30001),isFolder=True)
+	addDir('Beschikbare builds','',1,addon_icon,addon_fanart,local_string(30001),isFolder=True)
 	addDir('Onderhoud','',5,addon_icon,addon_fanart,local_string(30002),isFolder=True)
 	addDir('Frisse start','',4,addon_icon,addon_fanart,local_string(30003),isFolder=False)
 	addDir('Mededelingen','',100,addon_icon,addon_fanart,'Bring up the notifications dialog',isFolder=False)

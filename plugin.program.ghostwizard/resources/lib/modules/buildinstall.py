@@ -17,7 +17,7 @@ headers = addonvar.headers
 
 def main(NAME, NAME2, VERSION, URL, ICON, FANART, DESCRIPTION):
 	
-	yesInstall = dialog.yesno(NAME, 'Onze wizard is klaar om uw build te installeren.', nolabel='Annuleer', yeslabel='Ga door')
+	yesInstall = dialog.yesno(NAME, 'Onze wizard is klaar om uw build te installeren.', nolabel='Stop', yeslabel='Ga door')
 	if yesInstall:
 	    save_check()
 	    save_backup()
@@ -37,7 +37,7 @@ def build_install(name, name2, version, url):
 		import xbmc
 		if not xbmc.getCondVisibility('System.HasAddon(script.module.requests)'):
 			xbmc.executebuiltin('InstallAddon(script.module.requests)')
-			dialog.ok(name, 'Requests is being installed.\n Try again when Requests is finished installing.')
+			dialog.ok(name, 'Request module wordt geinstalleerd.\n Probeer opnieuw zodra Request module is geinstalleerd.')
 			return
 		d.download_build(name,zippath,meth='requests')
 	else:
