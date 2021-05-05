@@ -8,7 +8,6 @@ from resources.lib.OSserver import OSusersetting, OSuser
 from resources.lib.utils import setting, boolsetting, setsetting, localize, debug, debugsetting
 
 
-#Main Monitor********************************************************************************************************************************************
 
 class SubLoaderMonitor(xbmc.Monitor):
 
@@ -54,7 +53,6 @@ class SubLoaderMonitor(xbmc.Monitor):
 monitor = SubLoaderMonitor()
 
 
-#Player monitor******************************************************************************************************************************************
 
 class SubLoaderPlayer(xbmc.Player):
 
@@ -94,8 +92,6 @@ class SubLoaderPlayer(xbmc.Player):
 player = SubLoaderPlayer()
 
 
-#Abort request*******************************************************************************************************************************************
-
 closedebug = boolsetting('debug')
 
 while not xbmc.Monitor().abortRequested():
@@ -108,5 +104,3 @@ while not xbmc.Monitor().abortRequested():
 		del player
 		del monitor
 		break
-
-#********************************************************************************************************************************************************
