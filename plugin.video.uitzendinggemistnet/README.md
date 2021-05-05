@@ -1,2 +1,2 @@
 # plugin.video.uitzendinggemistnet
- Only works for RTL 4/5/7/8. Use retrospect addon for other channels.
+ Werkt alleen voor RTL 4/5/7/8. Gebruik Retrospect addon voor andere kanalen.
