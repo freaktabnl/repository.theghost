@@ -107,7 +107,7 @@ def make_request(url):
 			print('Reason: ', e.reason)
 
 def home():
-	add_dir('...[COLOR yellow]  Home  [/COLOR]...', '', None, icon, fanart)
+	add_dir('...[COLOR yellow]  Start  [/COLOR]...', '', None, icon, fanart)
 
 #define main directory and starting page
 def main():
