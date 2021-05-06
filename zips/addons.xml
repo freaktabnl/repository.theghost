@@ -340,7 +340,7 @@
     </extension>
 </addon>
 
-<addon id="service.ghostautosubs" name="[COLOR orange]Ghost[/COLOR] Autosubs" version="1.0.1" provider-name="The Ghost, DenimNani">
+<addon id="service.ghostautosubs" name="[COLOR orange]Ghost[/COLOR] Autosubs" version="1.0.2" provider-name="The Ghost, DenimNani">
 
   <extension point="xbmc.service" library="monitor.py" start="login"/>
   <extension point="xbmc.addon.metadata">
