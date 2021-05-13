@@ -15,7 +15,7 @@ ART = os.path.join(PATH, 'resources', 'media')
 #########################################################
 ADDONTITLE = '[COLOR orange][B]Ghost[/B][/COLOR] Open Wizard'
 BUILDERNAME = 'Ghost Open Wizard'
-EXCLUDES = [ADDON_ID, 'repository.ghostopenwizard']
+EXCLUDES = [ADDON_ID, 'repository.theghost']
 BUILDFILE = 'https://pastebin.com/raw/EkvT2ENx'
 UPDATECHECK = 0
 APKFILE = 'http://'
