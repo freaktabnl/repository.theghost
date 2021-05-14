@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<settings>
-	<category label="Automatisch aanzetten">
-		<setting id="autoenable" type="bool" label="Automatisch aanzetten bij volgende Kodi herstart." visible="false" default="false"/>
-    </category>
-</settings>
