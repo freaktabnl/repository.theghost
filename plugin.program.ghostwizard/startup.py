@@ -208,7 +208,7 @@ def build_update_check():
     response = tools.open_url(CONFIG.BUILDFILE, check=True)
 
     if not response:
-        logging.log("[Build Check] Not a valid URL for Build File: {0}".format(CONFIG.BUILDFILE), level=xbmc.LOGINFO)
+        logging.log("[Build Check] Geen geldige URL voor build bestand: {0}".format(CONFIG.BUILDFILE), level=xbmc.LOGINFO)
     elif not CONFIG.BUILDNAME == '':
         if CONFIG.SKIN in ['skin.confluence', 'skin.estuary', 'skin.estouchy'] and not CONFIG.DEFAULTIGNORE == 'true':
             check.check_skin()
