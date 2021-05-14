@@ -107,7 +107,7 @@ REPOZIPURL = 'https://github.com/freaktabnl/repository.theghost/blob/master/zips
 #        Notification Window                            #
 #########################################################
 # Enable Notification screen Yes or No
-ENABLE = 'No'
+ENABLE = 'Yes'
 # Url to notification file
 NOTIFICATION = 'https://pastebin.com/raw/E1ArBeHc'
 # Use either 'Text' or 'Image'
