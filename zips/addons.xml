@@ -43,12 +43,13 @@
   </extension>
 </addon>
 
-<addon id="plugin.program.ghostopenwizard" name="[COLOR orange]Ghost[/COLOR] Open Wizard" version="2.0.2" provider-name="The Ghost">
+<addon id="plugin.program.ghostwizard" name="[COLOR orange]Ghost[/COLOR] Wizard" version="3.0.0" provider-name="The Ghost, drinfernoo, slamious">
     <requires>
         <import addon="xbmc.python" version="3.0.0" />
         <import addon="script.module.requests" />
         <import addon="script.module.six" />
         <import addon="script.kodi.android.update" optional="true" version="1.1.7" />
+        <import addon="script.speedtester" optional="true" version="1.1.2" />
     </requires>
 
     <extension point="xbmc.python.pluginsource" library="default.py">
@@ -58,40 +59,16 @@
     <extension point="xbmc.service" library="startup.py" start="startup" />
 
     <extension point="xbmc.addon.metadata">
-        <summary lang="en_GB">[COLOR orange]Ghost[/COLOR] Open Wizard Matrix</summary>
-        <description lang="en_GB">[COLOR orange]Ghost[/COLOR] Open Wizard Kodi 19 Matrix bevat enkele onderhouds tools, onthoud inlog gegevens en instellingen en installeert uw eigen builds of die van andere. Dank aan Drinfernoo voor zijn kennis en bijdrage.</description>
-		<disclaimer lang="en_GB">Deze addon bevat geen illegale inhoud waar copyright op rust en is dus veilig om te installeren en maakt geen deel uit van Kodi.Dank aan Drinfernoo voor zijn kennis en bijdrages</disclaimer>
+		<summary lang="en_GB">Ghost Wizard is een addon om builds te installeren op Kodi 19 Matrix en onderhoud op uw systeem uit te voeren.</summary>
+		<description lang="en_GB">Ghost Wizard is een addon om builds te installeren op Kodi 19 Matrix en onderhoud op uw systeem uit te voeren.</description>
+	<disclaimer lang="en_GB">Deze addon bevat geen content en maakt op geen enkele wijze deel uit van Kodi zelf.</disclaimer>
         <platform>all</platform>
-		<license>GPL-2.0-or-later</license>
         <reuselanguageinvoker>false</reuselanguageinvoker>
         <assets>
             <icon>icon.png</icon>
             <fanart>fanart.png</fanart>
         </assets>
     </extension>
-</addon>
-
-<addon id="plugin.program.ghostwizard" name="[COLOR orange]Ghost[/COLOR] Wizard" version="2.0.6" provider-name="The Ghost">
-	<requires>
-		<import addon="xbmc.python" version="3.0.0"/>
-		<import addon="script.module.requests" optional="true" />
-	</requires>
-	<extension point="xbmc.python.pluginsource" library="addon.py">
-		<provides>executable</provides>
-	</extension>
-	<extension point="xbmc.service" library="service.py" />
-	<extension point="xbmc.addon.metadata">
-		<summary lang="en_GB">Ghost Wizard is een lichtgewicht template om builds te installeren op Kodi 19 Matrix.</summary>
-		<description lang="en_GB">Ghost Wizard is een lichtgewicht template om builds te installeren op Kodi 19 Matrix</description>
-	<disclaimer lang="en_GB">Deze addon bevat geen content en maakt op geen enkele wijze deel uit van Kodi zelf.</disclaimer>
-		<platform>all</platform>
-		<reuselanguageinvoker>false</reuselanguageinvoker>
-		<assets>
-				<icon>resources/icon.png</icon>
-				<fanart>resources/fanart.png</fanart>
-				<banner></banner>
-		</assets>
-	</extension>
 </addon>
 
 <addon
