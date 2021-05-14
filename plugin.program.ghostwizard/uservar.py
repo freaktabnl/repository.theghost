@@ -75,7 +75,7 @@ THEME5 = u'[COLOR {color1}]Current Theme:[/COLOR] [COLOR {color2}]{{}}[/COLOR]'.
 
 # Message for Contact Page
 # Enable 'Contact' menu item 'Yes' hide or 'No' dont hide
-HIDECONTACT = 'No'
+HIDECONTACT = 'Yes'
 # You can add \n to do line breaks
 CONTACT = 'Thank you for choosing The Ghost Wizard .'
 # Images used for the contact window.  http:// for default icon and fanart
@@ -98,18 +98,18 @@ AUTOINSTALL = 'Yes'
 # Addon ID for the repository
 REPOID = 'repository.theghost'
 # Url to Addons.xml file in your repo folder(this is so we can get the latest version)
-REPOADDONXML = 'https://raw.githubusercontent.com/freaktabnl/repository.theghost/master/repository.theghost/addon.xml'
+REPOADDONXML = 'http://'
 # Url to folder zip is located in
-REPOZIPURL = 'https://github.com/freaktabnl/repository.theghost/blob/master/zips/repository.theghost/repository.theghost-2.0.1.zip'
+REPOZIPURL = 'http://'
 #########################################################
 
 #########################################################
 #        Notification Window                            #
 #########################################################
 # Enable Notification screen Yes or No
-ENABLE = 'Yes'
+ENABLE = 'No'
 # Url to notification file
-NOTIFICATION = 'https://pastebin.com/raw/E1ArBeHc'
+NOTIFICATION = 'http://'
 # Use either 'Text' or 'Image'
 HEADERTYPE = 'Text'
 # Font size of header
