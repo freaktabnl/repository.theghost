@@ -1,5 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addons>
+<addon id="plugin.program.dab19wiz" name="[COLOR orange]Ghost[/COLOR] Wizard" version="5.0.0" provider-name="Slam and BYB Modded by The Ghost ">
+	<requires>
+		<import addon="xbmc.python" version="3.0.0"/>
+		<import addon="script.module.requests" optional="true" />
+	</requires>
+	<extension point="xbmc.python.pluginsource" library="addon.py">
+		<provides>executable</provides>
+	</extension>
+	<extension point="xbmc.service" library="service.py" />
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en_GB">Ghost 19 Wizard is een lichte wizard om eenvoudig builds te installeren en uw Kodi Matrix systeem clean te houden.</summary>
+		<description lang="en_GB">Ghost Kodi 19 wizard</description>
+	<disclaimer lang="en_GB">Deze addon bevat geen content en maakt op geen enkele wijze deel uit van Kodi zelf.</disclaimer>
+		<language>en</language>
+		<platform>all</platform>
+		<license>GPL-2.0-or-later</license>
+		<forum></forum>
+		<website></website>
+		<email></email>
+		<source></source>
+		<assets>
+				<icon>resources/icon.png</icon>
+				<fanart>resources/fanart.jpg</fanart>
+				<banner></banner>
+				<clearlogo></clearlogo>
+				<screenshot></screenshot>
+		</assets>
+	</extension>
+</addon>
+
 <addon id="plugin.program.openwizard" name="[COLOR limegreen]Open[/COLOR]Wizard" version="2.0.7" provider-name="drinfernoo, slamious">
     <requires>
         <import addon="xbmc.python" version="3.0.0" />
