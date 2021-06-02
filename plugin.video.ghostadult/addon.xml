@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.video.ghostadult" name="[COLOR orange]Ghost[/COLOR] Adult" version="1.0.1" provider-name="The Ghost, Vashiel">
+<addon id="plugin.video.ghostadult" name="[COLOR orange]Ghost[/COLOR] Adult" version="1.0.2" provider-name="The Ghost, Vashiel">
 	<requires>
 	<!-- <import addon="xbmc.python" version="2.14.0"/> -->
 	<import addon="script.module.six"/>
